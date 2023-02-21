@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "strapi_hams",
+  "info": {
+    "singularName": "strapi-ham",
+    "pluralName": "strapi-hams",
+    "displayName": "Strapi Ham"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "gg": {
+      "type": "string"
+    }
+  }
+}
