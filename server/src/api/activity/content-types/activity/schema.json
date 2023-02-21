@@ -26,14 +26,24 @@
       "mappedBy": "activities"
     },
     "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "expired_date": {
+      "type": "datetime"
+    },
+    "date": {
+      "type": "string"
     }
   }
 }
