@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -12,19 +11,58 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom';
+import { storeUser, userData } from '../helper';
 import './login.css';
+
 
 const theme = createTheme();
 
-export default function login() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
+const initialUser = { identifier: '', password: ''};
+
+export default function SignInSide() {
+    const [user, setUser] = useState(initialUser)
+    const navigate = useNavigate();
+
+    const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      console.log(user);
+      const url = "http://localhost:1337/api/auth/local"
+      try {
+        if (user.identifier && user.password) {
+          const {data} = await axios.post(url, user)
+          console.log(data)
+          if (data.jwt) {
+            storeUser(data)
+            toast.success('Login successful', {
+              hideProgressBar: true
+            })
+            setUser(initialUser)
+            navigate('/')
+          }
+    }}catch(err) {
+      toast.error("Invalid email or password", {
+        hideProgressBar: true
+      })
+    }}
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      const { name, value } = event.target;
+      setUser({
+      ...user,
+        [name]: value,
+      });
+    };
+
+    useEffect(() => {
+      const data = userData();
+      if(data.jwt) {
+        navigate('/')
+      }
     });
-  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -60,7 +98,7 @@ export default function login() {
             <Typography component="h1" variant="h5">
               เข้าสู่ระบบ
             </Typography>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+            <Box component="form" noValidate onSubmit={handleLogin} sx={{ mt: 1 }}>
               <TextField
                 margin="normal"
                 required
