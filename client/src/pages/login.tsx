@@ -1,141 +1,70 @@
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { toast } from 'react-toastify'
-import { useNavigate } from 'react-router-dom';
-import { storeUser, userData } from '../helper';
+import React, { ChangeEvent, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import './login.css';
 
+const Login: React.FC = (props) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-const theme = createTheme();
+  const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
 
-const initialUser = { identifier: '', password: ''};
-
-export default function SignInSide() {
-    const [user, setUser] = useState(initialUser)
-    const navigate = useNavigate();
-
-    const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
-      console.log(user);
-      const url = "http://localhost:1337/api/auth/local"
-      try {
-        if (user.identifier && user.password) {
-          const {data} = await axios.post(url, user)
-          console.log(data)
-          if (data.jwt) {
-            storeUser(data)
-            toast.success('Login successful', {
-              hideProgressBar: true
-            })
-            setUser(initialUser)
-            navigate('/')
-          }
-    }}catch(err) {
-      toast.error("Invalid email or password", {
-        hideProgressBar: true
-      })
-    }}
-
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      const { name, value } = event.target;
-      setUser({
-      ...user,
-        [name]: value,
+    try {
+      const response = await fetch('http://localhost:1337/api/auth/local', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          identifier: email,
+          password: password
+        })
       });
-    };
 
-    useEffect(() => {
-      const data = userData();
-      if(data.jwt) {
-        navigate('/')
+      if (response.ok) {
+        const data = await response.json();
+        // save the token to local storage or global state
+        navigate('/dashboard');
+      } else {
+        console.log('Login failed.');
       }
-    });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  function handleEmailChange(event: ChangeEvent<HTMLInputElement>): void {
+    throw new Error("Function not implemented.");
+  }
 
   return (
-    <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: '100vh' }}>
-        <CssBaseline />
-        <Grid
-          item
-          xs={false}
-          sm={4}
-          md={7}
-          sx={{
-            backgroundImage: 'url(https://sv1.img.in.th/Unx9Zf.jpeg)',
-            backgroundRepeat: 'no-repeat',
-            backgroundColor: (t) =>
-              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-          <Box
-            sx={{
-              my: 11,
-              mx: 4,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}
-          >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-              <LockOutlinedIcon />
-            </Avatar>
-            <Typography component="h1" variant="h5">
-              เข้าสู่ระบบ
-            </Typography>
-            <Box component="form" noValidate onSubmit={handleLogin} sx={{ mt: 1 }}>
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                label="บัญชีผู้ใช้"
-                name="email"
-                autoComplete="email"
-                autoFocus
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="รหัสผ่าน"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >
-                เข้าสู่ระบบ
-              </Button>
-                <Grid item>
-                  <Link href="#" variant="body2">
-                    {"ยังไม่มีบัญชีใช่ไหม? สมัครทีนี่"}
-                  </Link>
-                </Grid>
-            </Box>
-          </Box>
-        </Grid>
-      </Grid>
-    </ThemeProvider>
+    <div className="container">
+    <div className="image">
+    <form className="form">
+      <p id="heading">
+        Login</p>
+      <div className="field">
+      <svg className="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z"></path>
+      </svg>
+        <input placeholder="Username" className="input-field" type="text"/>
+      </div>
+      <div className="field">
+      <svg className="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path>
+      </svg>
+        <input placeholder="Password" className="input-field" type="password"/>
+      </div>
+      <div className="btn">
+      <button className="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+      <button className="button2">Sign Up</button>
+      </div>
+    </form>
+  </div>
+  </div>
   );
-}
+};
+
+export default Login;
