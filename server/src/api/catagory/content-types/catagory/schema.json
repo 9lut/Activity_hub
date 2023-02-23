@@ -4,7 +4,8 @@
   "info": {
     "singularName": "catagory",
     "pluralName": "catagories",
-    "displayName": "Catagory"
+    "displayName": "Catagory",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
