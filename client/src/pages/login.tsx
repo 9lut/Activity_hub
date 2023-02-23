@@ -49,8 +49,11 @@ const Login: React.FC = (props) => {
     <div className="container">
     <div className="image">
     <form className="form">
-      <p id="heading">
-        Login</p>
+      <p className="heading">
+        เข้าสู่ระบบ</p>
+      <p className="Username">
+        บัญชีผู้ใช้
+      </p>
       <div className="field">
       <svg className="input-icon" xmlns="http://www.w3.org/2000/svg" 
       width="16" height="16" 
@@ -61,6 +64,9 @@ const Login: React.FC = (props) => {
         onChange={(e) => setEmail(e.target.value)}
         type="text"/>
       </div>
+      <p className="Password">
+        รหัสผ่าน
+      </p>
       <div className="field">
       <svg className="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
       </svg>
@@ -68,8 +74,10 @@ const Login: React.FC = (props) => {
         onChange={(e) => setPassword(e.target.value)}
         type="password"/>
       </div>
+      <p className="Tag">
+        ยังไม่มีบัญชีใช่ไหม?</p>
       <div className="btn">
-      <button className="button1" onClick={() => navigate("/Home")}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+      <button className="button1" onClick={() => navigate("/Home")}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ลงชื่อเข้าใช้&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
       </div>
     </form>
   </div>

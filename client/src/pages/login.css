@@ -3,8 +3,9 @@
   padding: 0;
 }
 
-.p {
+.heading {
   color: black;
+  font-size: 24px;
 }
 .container {
   display: flex;
@@ -22,14 +23,27 @@
   align-items: center;
   justify-content: center;
 }
+.Username{
+  color:black ;
+  padding-right: 9em;
+}
+.Password{
+  color:black ;
+  padding-right: 9em;
+}
+.Tag{
+  color:black ;
+  margin-top: 5px;
+
+}
 .form {
-  width: 200px;
+  width: 250px;
   height: 350px;
   display: flex;
-  margin-left: auto;
+  margin-left: 900px;
   margin-right: auto;
   margin-top: 150px;
-  margin-top: 250px;
+  margin-top: 150px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -90,16 +104,17 @@
 }
 
 .button1 {
-  padding: 0.5em;
+  padding: 1em;
   padding-left: 1.1em;
   padding-right: 1.1em;
-  border-radius: 5px;
   margin-right: 0.5em;
   border: none;
   outline: none;
   transition: .4s ease-in-out;
-  background-color: #252525;
+  background-color: #0038FF;
+  border-radius: 103px;
   color: white;
+  font-size: 15px;
 }
 
 .button1:hover {
