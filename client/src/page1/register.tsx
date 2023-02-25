@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -11,13 +10,18 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { userData } from '../helper';
 
 function Copyright(props: any) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
+      <Link color="inherit" href="http://localhost:3000/">
         Your Website
       </Link>{' '}
       {new Date().getFullYear()}
@@ -28,15 +32,43 @@ function Copyright(props: any) {
 
 const theme = createTheme();
 
-export default function SignUp() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+const initialUser = { email: '', password: '', username: '' };
+
+
+export default function RegisterPage() {
+  const [user, setUser] = useState(initialUser)
+  const navigate = useNavigate();
+
+  const handleSignup = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
+    console.log(user);
+    const url = "http://localhost:1337/api/auth/local/register";
+    try {
+      if (user.email && user.password && user.username) {
+        const res = await axios.post(url, user)
+        console.log(res.data)
+        navigate('/login', { replace: true })
+    }
+  }catch(err) {
+    toast.error("Invalid email or password", {
+      hideProgressBar: true
+    })
+  }}
+
+const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setUser({
+    ...user,
+      [name]: value,
     });
   };
+
+useEffect(() => {
+  const data = userData();
+  if(data.jwt) {
+    navigate('/')
+  }
+});
 
   return (
     <ThemeProvider theme={theme}>
@@ -56,7 +88,7 @@ export default function SignUp() {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Box component="form" noValidate onSubmit={handleSignup} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
