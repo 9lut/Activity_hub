@@ -83,12 +83,12 @@ const Login: React.FC = (props) => {
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-      <span>คุณยังไม่มีบัญชีใช่ไหม? <a href="#" className="link signup-link">สมัครที่นี้</a></span>
+      <span>คุณยังไม่มีบัญชีใช่ไหม? <a href="http://localhost:3000/register" className="link signup-link">สมัครที่นี้</a></span>
       <div className="btn">
         <button className="button1" type="submit">ลงชื่อเข้าใช้</button>
       </div>
       <div className="media-options">
-        <a href="#" className="field google">
+        <a href="http://localhost:1337/api/connect/google" className="field google">
           <img src="#" alt="" className="google-img" />
           <span>เข้าสู่ระบบโดย Google</span>
         </a>

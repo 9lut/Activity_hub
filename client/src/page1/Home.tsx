@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-const settings = ['Profile', 'สถานะการสมัคร', 'ประวัติการสมัคร'];
+const settings = ['Profile', 'สถานะการสมัคร', 'ประวัติการสมัคร','ออกจากระบบ'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -54,19 +54,9 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            <img src="../image/Activity (1).png" style={{width:'250px',height:'40px',position:'relative',top:'5px'}}/>
+            <img src="https://sgp1.vultrobjects.com/img-in-th/Udj5by.png" style={{width:'100px',height:'50px',position:'relative',top:'5px'}}/>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
