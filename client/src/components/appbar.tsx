@@ -15,7 +15,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 
 const settings = ['Profile', 'สถานะการสมัคร', 'ประวัติการสมัคร'];
 
-function ResponsiveAppBar() {
+function appbar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
@@ -148,4 +148,4 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
-export default ResponsiveAppBar;
+export default appbar;
