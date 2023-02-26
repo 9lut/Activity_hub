@@ -34,7 +34,6 @@ const theme = createTheme();
 
 const initialUser = { email: '', password: '', username: '' };
 
-
 export default function RegisterPage() {
   const [user, setUser] = useState(initialUser)
   const navigate = useNavigate();
@@ -63,10 +62,10 @@ const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     });
   };
 
-useEffect(() => {
-  const data = userData();
-  if(data.jwt) {
-    navigate('/')
+  useEffect(() => {
+    const data = userData();
+    if(data.jwt) {
+      navigate('/')
   }
 });
 
@@ -98,6 +97,7 @@ useEffect(() => {
                   fullWidth
                   id="firstName"
                   label="First Name"
+                  onChange={handleChange}
                   autoFocus
                 />
               </Grid>
@@ -109,6 +109,8 @@ useEffect(() => {
                   label="Last Name"
                   name="lastName"
                   autoComplete="family-name"
+                  onChange={handleChange}
+                  autoFocus
                 />
               </Grid>
               <Grid item xs={12}>
@@ -119,6 +121,8 @@ useEffect(() => {
                   label="Username"
                   name="username"
                   autoComplete="username"
+                  onChange={handleChange}
+                  autoFocus
                 />
               </Grid>
               <Grid item xs={12}>
@@ -129,6 +133,8 @@ useEffect(() => {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  onChange={handleChange}
+                  autoFocus
                 />
               </Grid>
               <Grid item xs={12}>
@@ -140,17 +146,7 @@ useEffect(() => {
                   type="password"
                   id="password"
                   autoComplete="new-password"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="confir_mpassword"
-                  label="Confirm Password"
-                  type="confirm_password"
-                  id="confirm_password"
-                  autoComplete="confirm-password"
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -170,7 +166,7 @@ useEffect(() => {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="http://localhost:3000/login" variant="body2">
                   Already have an account? Sign in
                 </Link>
               </Grid>
