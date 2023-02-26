@@ -54,7 +54,7 @@ function appbar() {
               textDecoration: 'none',
             }}
           >
-            <img src="../image/Activity (1).png" style={{width:'250px',height:'40px',position:'relative',top:'5px'}}/>
+            <img src="../image/Activity.png" style={{width:'250px',height:'40px',position:'relative',top:'5px'}}/>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -117,7 +117,7 @@ function appbar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="../image/Activity (1).png" />
+                <Avatar alt="Remy Sharp" src="../image/Activity.png" />
               </IconButton>
             </Tooltip>
             <Menu
