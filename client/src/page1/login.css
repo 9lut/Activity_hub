@@ -36,15 +36,20 @@
   margin-top: 5px;
 
 }
+.logo {
+  width: 400px;;
+  height: 400px;
+  margin: auto;
+  justify-content: space-evenly
+}
 .form {
   width: 250px;
   height: 350px;
   display: flex;
   margin-left: 900px;
   margin-right: auto;
-  margin-top: 150px;
-  margin-top: 150px;
-  justify-content: center;
+  margin-top: -250px;
+  justify-content: flex-end;
   align-items: center;
   flex-direction: column;
   gap: 10px;
@@ -95,7 +100,7 @@
   display: flex;
   justify-content: center;
   flex-direction: row;
-  margin-top: 2.5em;
+  margin-top: 2em;
 }
 
 .button1 {

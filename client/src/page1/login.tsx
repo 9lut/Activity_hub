@@ -8,6 +8,7 @@ const Login: React.FC = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const img = require('../image/Activity.png')
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -43,6 +44,9 @@ const Login: React.FC = (props) => {
   return (
 <div className="container">
   <div className="image">
+    <div>
+      <img src = {img} className="logo"/>
+    </div>
     <form className="form" onSubmit={handleSubmit}>
       <p className="heading">เข้าสู่ระบบ</p>
       <p className="Username">บัญชีผู้ใช้</p>
@@ -83,7 +87,7 @@ const Login: React.FC = (props) => {
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-      <span>คุณยังไม่มีบัญชีใช่ไหม? <a href="http://localhost:3000/register" className="link signup-link">สมัครที่นี้</a></span>
+      <span>คุณยังไม่มีบัญชีใช่ไหม? <a href="http://localhost:3000/register" className="link signup-link">สมัครที่นี่</a></span>
       <div className="btn">
         <button className="button1" type="submit">ลงชื่อเข้าใช้</button>
       </div>
