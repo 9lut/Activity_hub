@@ -5,7 +5,7 @@ import './App.css';
 import Login from './page1/login';
 import Home from './page1/Home';
 import Register from './page1/register';
-import appbar from "./components/appbar";
+import AppBar from "./components/appbar";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={< Login />} />
         <Route path="login" element={< Login />} />
-        <Route path="home" element={<Home />} />
+        <Route path="Home" element={< Home />} />
         <Route path="register" element={<Register/>} />
       </Routes>
     </div>
