@@ -1,0 +1,21 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../image/backgroundhome.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 80vh;
+  }
+  
+  .filter-select {
+    margin: 1rem;
+    min-width: 120px;
+    color: #FFFFFF;
+  }
+  
+  .search-input {
+    margin: 1rem;
+    min-width: 120px;
+    color: #FFFFFF;
+  }
