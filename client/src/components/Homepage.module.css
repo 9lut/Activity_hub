@@ -1,0 +1,61 @@
+.root {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    align-items: flex-start;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.wpp2 {
+    position: absolute;
+    left: 0;
+    top: -20%; /* adjust this value as necessary */
+    width: 100%;
+    height: 120%; /* adjust this value as necessary */
+    background-image: url('../../public/assest/wpp2.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.activity11 {
+    position: absolute;
+    left: 54%; /* adjust this value as necessary */
+    top: 31%; /* adjust this value as necessary */
+    width: 30%; /* adjust this value as necessary */
+    height: 46%; /* adjust this value as necessary */
+    background-image: url('../../public/assest/activity11.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.welcomeTo {
+    color: #fff;
+    font-size: 7vw; /* adjust this value as necessary */
+    font-weight: bold;
+    font-family: Ek Mukta, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+    position: absolute;
+    left: 18%; /* adjust this value as necessary */
+    top: 38%; /* adjust this value as necessary */
+    width: min-content;
+    height: min-content;
+    white-space: nowrap;
+    flex-direction: column;
+}
+
+.homepage {
+    color: #fff;
+    font-size: 2vw; /* adjust this value as necessary */
+    font-weight: bold;
+    font-family: Ek Mukta, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+    text-decoration: underline;
+    position: absolute;
+    left: 88%; /* adjust this value as necessary */
+    top: 92%; /* adjust this value as necessary */
+    width: min-content;
+    height: min-content;
+    white-space: nowrap;
+    flex-direction: column;
+}

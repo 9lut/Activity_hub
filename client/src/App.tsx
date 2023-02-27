@@ -6,7 +6,11 @@ import Login from './page1/login';
 import Home from './page1/Home';
 import Register from './page1/register';
 import AppBar from "./components/appbar";
+<<<<<<< HEAD
 import Profile from './page1/Profile'
+=======
+import Homepage from './page1/Homepage';
+>>>>>>> 37aaa05 (เพิ่มหน้ารองก่อนเข้าหน้าหลัก)
 
 function App() {
   return (
@@ -16,7 +20,11 @@ function App() {
         <Route path="login" element={< Login />} />
         <Route path="Home" element={< Home />} />
         <Route path="register" element={<Register/>} />
+<<<<<<< HEAD
         <Route path="/Profile" element={<Profile />} />
+=======
+        <Route path="homepage" element={<Homepage />}/>
+>>>>>>> 37aaa05 (เพิ่มหน้ารองก่อนเข้าหน้าหลัก)
       </Routes>
     </div>
   );
