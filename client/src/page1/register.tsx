@@ -4,7 +4,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
@@ -17,25 +16,13 @@ import axios from 'axios';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { userData } from '../helper';
 
-function Copyright(props: any) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="http://localhost:3000/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
 const theme = createTheme();
 
-const initialUser = { email: '', password: '', username: '' };
+const initialUser = { firstName: '', lastName: '', username: '', email: '', password: '', confirmPassword: '' };
 
 export default function RegisterPage() {
   const [user, setUser] = useState(initialUser)
+  const [passwordError, setPasswordError] = useState(false);
   const navigate = useNavigate();
 
   const handleSignup = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -43,21 +30,24 @@ export default function RegisterPage() {
     console.log(user);
     const url = "http://localhost:1337/api/auth/local/register";
     try {
-      if (user.email && user.password && user.username) {
+      if (user.email && user.password && user.username && user.password === user.confirmPassword) {
         const res = await axios.post(url, user)
         console.log(res.data)
         navigate('/login', { replace: true })
+      } else {
+        setPasswordError(true);
+      }
+    } catch(err) {
+      toast.error("Invalid email or password", {
+        hideProgressBar: true
+      })
     }
-  }catch(err) {
-    toast.error("Invalid email or password", {
-      hideProgressBar: true
-    })
-  }}
+  }
 
-const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setUser({
-    ...user,
+      ...user,
       [name]: value,
     });
   };
@@ -66,8 +56,16 @@ const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const data = userData();
     if(data.jwt) {
       navigate('/')
+    }
+  });
+
+  function setConfirmPassword(value: string): void {
+    setUser({
+      ...user,
+      confirmPassword: value
+    });
+    setPasswordError(false);
   }
-});
 
   return (
     <ThemeProvider theme={theme}>
@@ -85,7 +83,7 @@ const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign up
+            สมัครสมาชิก
           </Typography>
           <Box component="form" noValidate onSubmit={handleSignup} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
@@ -96,33 +94,31 @@ const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
                   required
                   fullWidth
                   id="firstName"
-                  label="First Name"
+                  label="ชื่อ"
                   onChange={handleChange}
                   autoFocus
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  required
                   fullWidth
                   id="lastName"
-                  label="Last Name"
+                  label="สกุล"
                   name="lastName"
-                  autoComplete="family-name"
                   onChange={handleChange}
                   autoFocus
+                  autoComplete="family-name"
                 />
+
               </Grid>
               <Grid item xs={12}>
                 <TextField
                   required
                   fullWidth
                   id="username"
-                  label="Username"
+                  label="บัญชีผู้ใช้"
                   name="username"
                   autoComplete="username"
-                  onChange={handleChange}
-                  autoFocus
                 />
               </Grid>
               <Grid item xs={12}>
@@ -130,11 +126,9 @@ const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
                   required
                   fullWidth
                   id="email"
-                  label="Email Address"
+                  label="อีเมล"
                   name="email"
                   autoComplete="email"
-                  onChange={handleChange}
-                  autoFocus
                 />
               </Grid>
               <Grid item xs={12}>
@@ -142,38 +136,46 @@ const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
                   required
                   fullWidth
                   name="password"
-                  label="Password"
+                  label="รหัสผ่าน"
                   type="password"
                   id="password"
                   autoComplete="new-password"
-                  onChange={handleChange}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  name="confirm_mpassword"
+                  label="ยืนยันรหัสผ่านอีกครั้ง"
+                  type="password"
+                  id="confirm_password"
+                  autoComplete="confirm-password"
+                  onChange={(event) => setConfirmPassword(event.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
                 <FormControlLabel
                   control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="I want to receive inspiration, marketing promotions and updates via email."
+                  label="ฉันยอมรับการใช้งานของเว็บไซต์นี้"
                 />
               </Grid>
             </Grid>
             <Button
               type="submit"
+              className='btn'
+              value="สมัครสมาชิก"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign Up
+              สมัครสมาชิก
             </Button>
             <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link href="http://localhost:3000/login" variant="body2">
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
+            <span>คุณมีบัญชีแล้วใช่ไหม? <a href="http://localhost:3000/login" className="link signup-link">เข้าสู่ระบบที่นี่</a></span>
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>
   );
