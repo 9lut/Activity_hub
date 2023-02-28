@@ -1,20 +1,15 @@
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
+import { Avatar, Box, Button, Container, CssBaseline, Grid, TextField, Typography } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
+
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+
 import axios from 'axios';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 import { userData } from '../helper';
+
 
 const theme = createTheme();
 
@@ -28,9 +23,9 @@ export default function RegisterPage() {
   const handleSignup = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(user);
-    const url = "http://localhost:1337/api/auth/local/register";
     try {
-      if (user.email && user.password && user.username && user.password === user.confirmPassword) {
+      const url = "http://localhost:1337/api/auth/local/register"
+      if (user.email && user.password && user.username && (user.password === user.confirmPassword)) {
         const res = await axios.post(url, user)
         console.log(res.data)
         navigate('/login', { replace: true })
@@ -118,6 +113,7 @@ export default function RegisterPage() {
                   id="username"
                   label="บัญชีผู้ใช้"
                   name="username"
+                  onChange={handleChange}
                   autoComplete="username"
                 />
               </Grid>
@@ -128,6 +124,7 @@ export default function RegisterPage() {
                   id="email"
                   label="อีเมล"
                   name="email"
+                  onChange={handleChange}
                   autoComplete="email"
                 />
               </Grid>
@@ -139,6 +136,7 @@ export default function RegisterPage() {
                   label="รหัสผ่าน"
                   type="password"
                   id="password"
+                  onChange={handleChange}
                   autoComplete="new-password"
                 />
               </Grid>
@@ -152,12 +150,6 @@ export default function RegisterPage() {
                   id="confirm_password"
                   autoComplete="confirm-password"
                   onChange={(event) => setConfirmPassword(event.target.value)}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="ฉันยอมรับการใช้งานของเว็บไซต์นี้"
                 />
               </Grid>
             </Grid>
