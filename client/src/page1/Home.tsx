@@ -40,8 +40,8 @@ function Home() {
         displayEmpty
       >
       
-        <MenuItem value=''>
-          ค้นหาประเภทกิจกรรม
+        <MenuItem disabled value="">
+          ประเภทกิจกรรม
         </MenuItem>
         <MenuItem value={1}>ทั้งหมด</MenuItem>
         <MenuItem value={2}>กิจกรรมค่าย</MenuItem>
