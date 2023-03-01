@@ -93,7 +93,7 @@ const Login: React.FC = (props) => {
       </div>
       <div className="media-options">
         <a href="http://localhost:1337/api/connect/google" className="field google">
-          <img src="#" alt="" className="google-img" />
+          <img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png" className="google-img" />
           <span>เข้าสู่ระบบโดย Google</span>
         </a>
       </div>
