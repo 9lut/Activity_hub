@@ -1,21 +1,50 @@
 .home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: url("../image/backgroundhome.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 80vh;
-  }
-  
-  .filter-select {
-    margin: 1rem;
-    min-width: 120px;
-    color: #FFFFFF;
-  }
-  
-  .search-input {
-    margin: 1rem;
-    min-width: 120px;
-    color: #FFFFFF;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../image/backgroundhome.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.search-box {
+  height: 12%;
+  width: 70%; 
+  background-color: #ffffff;
+  position: absolute;
+  bottom: 60px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+.search-input {
+  height: 1px;
+  width: 500px;
+  color: #0543b6;
+  right: 315px; 
+  top: 8px;
+}
+
+.filter-select {
+  height: 56px;
+  width: 300px;
+  color: #0543b6;
+  left: 530px; 
+  bottom: 8px;
+}
+
+.search-all{
+  font-size: 16px;
+  color:#000000;
+}
+
+.search-run{
+  font-size: 16px;
+  color:#000000;
+}
+
+.search-camp{
+  font-size: 16px;
+  color:#000000;
+}
