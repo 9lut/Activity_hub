@@ -20,18 +20,18 @@
 
 .search-input {
   height: 1px;
-  width: 500px;
+  width: 400px;
   color: #0543b6;
-  right: 315px; 
-  top: 8px;
+  right: -100px; 
+  top: 20px;
 }
 
 .filter-select {
   height: 55px;
   width: 300px;
   color: #0543b6;
-  left: 530px; 
-  top: -7px;
+  left: 200px; 
+  top: 4px;
 }
 
 .search-all{

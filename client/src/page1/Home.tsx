@@ -35,13 +35,22 @@ function Home() {
     <Box className="home-container">
       <AppBar />
       <Box className="search-box">
+        <TextField
+          className="search-input"
+          label="ชื่อกิจกรรม"
+          placeholder="ค้นหาชื่อกิจกรรม"
+          variant="outlined"
+          value={searchFilter}
+          onChange={handleChangeSearchFilter}/>
+      
+
+
         <Select
           className="filter-select"
           value={selectFilter}
           onChange={handleChangeSelectFilter}
           displayEmpty
         >
-        
           <MenuItem disabled value="">
             ประเภทกิจกรรม
           </MenuItem>
@@ -55,14 +64,6 @@ function Home() {
               <p className="search-camp">กิจกรรมค่าย</p>
             </MenuItem> 
         </Select>
-
-        <TextField
-          className="search-input"
-          label="ชื่อกิจกรรม"
-          placeholder="ค้นหาชื่อกิจกรรม"
-          variant="outlined"
-          value={searchFilter}
-          onChange={handleChangeSearchFilter}/>
       </Box>
     </Box>
   );
