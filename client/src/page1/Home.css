@@ -27,11 +27,11 @@
 }
 
 .filter-select {
-  height: 56px;
+  height: 55px;
   width: 300px;
   color: #0543b6;
   left: 530px; 
-  bottom: 8px;
+  top: -7px;
 }
 
 .search-all{
