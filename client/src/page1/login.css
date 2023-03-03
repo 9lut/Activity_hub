@@ -36,7 +36,10 @@
   width: 400px;;
   height: 400px;
   margin: auto;
-  justify-content: space-evenly
+  justify-content: space-evenly;
+  position: relative;
+  top:170px;
+  right:-150px
 }
 
 .form {
