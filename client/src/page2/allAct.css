@@ -11,10 +11,7 @@
     margin: 1rem;
     min-width: 120px;
     color: #FFFFFF;
-  }
-  
-  .search-input {
-    margin: 1rem;
-    min-width: 120px;
-    color: #FFFFFF;
+    position: relative;
+    top:20px;
+    left:-500px;
   }
