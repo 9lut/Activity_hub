@@ -16,12 +16,12 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={< Login />} />
+        <Route path="/" element={< Homepage />} />
         <Route path="login" element={< Login />} />
         <Route path="Home" element={< Home />} />
         <Route path="register" element={<Register/>} />
         <Route path="/Profile" element={<Profile />} />
-        <Route path="homepage" element={<Homepage />}/>
+        {/* <Route path="homepage" element={<Homepage />}/> */}
         <Route path="AllAct" element={<AllAct />}/>
         <Route path="payment" element={<Payment />}/>
       </Routes>

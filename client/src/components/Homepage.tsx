@@ -13,7 +13,7 @@ export const Homepage: FC<Props> = memo(function Homepage(props = {}) {
             <div className={classes.wpp2}></div>
             <div className={classes.activity11}></div>
             <div className={classes.welcomeTo}>Welcome to</div>
-            <a href = "http://localhost:3000/home" className={classes.homepage}>Homepage &gt;&gt;</a>
+            <a href = "http://localhost:3000/login" className={classes.homepage}>Login &gt;&gt;</a>
         </div>
     );
 });
