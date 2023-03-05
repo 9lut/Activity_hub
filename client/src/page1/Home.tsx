@@ -1,9 +1,9 @@
 import { ChangeEvent, useEffect, useState } from 'react';
-import { MenuItem, Select, SelectChangeEvent, TextField } from '@mui/material';
+import { Grid, MenuItem, Select, SelectChangeEvent, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import AppBar from '../components/appbar';
 import Result from '../models/Result';
-import backgroundImage from '../image/backgroundhome.png';
+import CardHome from '../components/card';
 import './Home.css';
 
 function Home() {
@@ -32,8 +32,11 @@ function Home() {
 
   return (
   <div>
-    <Box className="home-container">
-      <AppBar />
+    <AppBar />
+      <header className="header">
+        <div className="container">
+        </div>
+      </header>
         <Box className="search-box">
           <TextField
             className="search-input"
@@ -43,8 +46,6 @@ function Home() {
             value={searchFilter}
             onChange={handleChangeSearchFilter}/>
         
-
-
           <Select
             className="search-select"
             value={selectFilter}
@@ -62,10 +63,17 @@ function Home() {
               </MenuItem>
               <MenuItem value={3}>
                 <p className="search-camp">กิจกรรมค่าย</p>
-              </MenuItem> 
+              </MenuItem>
           </Select>
+          <Typography gutterBottom variant="h5" component="div" marginTop={8}>
+          Open now   
+          </Typography> 
+          <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 2, sm: 8, md: 12, lg: 12, xl: 10}}>
+            <Grid marginTop={4}>
+              <CardHome />
+            </Grid>
+        </Grid>
         </Box>
-    </Box>
   </div>
   );
 };
