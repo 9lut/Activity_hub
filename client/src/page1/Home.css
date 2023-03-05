@@ -9,8 +9,10 @@
 }
 
 .search-box {
-  height: 12%;
-  width: 62%; 
+  height: 10%;
+  width: 70%; 
+  margin: 200px;
+  align-items: center;
   background-color: #ffffff;
   position: absolute;
   bottom: 60px;
