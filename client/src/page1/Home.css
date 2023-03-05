@@ -10,7 +10,7 @@
 
 .search-box {
   height: 12%;
-  width: 70%; 
+  width: 62%; 
   background-color: #ffffff;
   position: absolute;
   bottom: 60px;
@@ -19,19 +19,21 @@
 }
 
 .search-input {
+  margin: 1rem;
   height: 1px;
-  width: 400px;
+  width: 500px;
   color: #0543b6;
-  right: -100px; 
-  top: 20px;
+  right: -15px; 
+  top: 10px;
 }
 
-.filter-select {
+.search-select{
+  margin: 1rem;
   height: 55px;
-  width: 300px;
+  width: 220px;
   color: #0543b6;
-  left: 200px; 
-  top: 4px;
+  left: 20px; 
+  top: -6px;
 }
 
 .search-all{
