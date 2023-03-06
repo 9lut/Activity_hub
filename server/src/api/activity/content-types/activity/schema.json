@@ -39,11 +39,11 @@
     "location": {
       "type": "string"
     },
-    "expired_date": {
-      "type": "datetime"
-    },
-    "date": {
-      "type": "string"
+    "activity_date": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::activity-date.activity-date",
+      "mappedBy": "date"
     }
   }
 }

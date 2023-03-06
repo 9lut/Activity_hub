@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "activity_dates",
+  "info": {
+    "singularName": "activity-date",
+    "pluralName": "activity-dates",
+    "displayName": "Activity-date",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "First_date": {
+      "type": "datetime",
+      "required": true
+    },
+    "End_date": {
+      "type": "datetime",
+      "required": true
+    },
+    "date": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::activity.activity",
+      "inversedBy": "activity_date"
+    },
+    "event": {
+      "type": "date"
+    }
+  }
+}
