@@ -18,6 +18,7 @@ const settings = ['ชำระเงิน','สถานะการสมั�
 function Appbar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+  const img = require('../image/Activity.png');
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -54,7 +55,7 @@ function Appbar() {
               textDecoration: 'none',
             }}
           >
-            <img src="../image/Activity.png" style={{width:'250px',height:'40px',position:'relative',top:'5px'}}/>
+            <img src={img} style={{width:'80px',height:'70px',position:'relative',top:'5px'}}/>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
