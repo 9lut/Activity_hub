@@ -12,6 +12,7 @@ import From from "./page1/from";
 import Payment from "./page1/payment";
 import DetailAct from "./page1/DetailActPage";
 import Logout from "./page1/logout";
+import Status from "./page1/status";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path="payment" element={<Payment />}/>
         <Route path="detailact" element={<DetailAct />} />
         <Route path="logout" element={<Logout />} />
+        <Route path="status" element={<Status />} />
       </Routes>
     </div>
   );

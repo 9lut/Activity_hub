@@ -20,11 +20,6 @@ function Appbar() {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
   const img = require('../image/Activity.png');
   const [activeLink, setActiveLink] = useState("");
-  const [refresh, setRefresh] = useState(false);
-
-  const handleRefresh = () => {
-    setRefresh(!refresh); 
-  };
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -67,8 +62,7 @@ function Appbar() {
             variant="h6"
             noWrap
             component="a"
-            href=""
-            onClick={handleRefresh}
+            href="/home"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -162,7 +156,7 @@ function Appbar() {
             >
               {settings.map((setting) => (
                 <Link
-                  to={setting === "ออกจากระบบ" ? "/logout" : setting === "ชำระเงิน" ? "/payment" : setting === "สถานะการสมัคร" ? "/login" : "/Profile"}
+                  to={setting === "ออกจากระบบ" ? "/logout" : setting === "ชำระเงิน" ? "/payment" : setting === "สถานะการสมัคร" ? "/status" : "/Profile"}
                   style={{ textDecoration: "none" }}
                 >
                  <MenuItem onClick={handleCloseUserMenu}>

@@ -10,7 +10,7 @@
 
 .search-box {
   height: 10%;
-  width: 70%; 
+  width: 63%; 
   margin: 200px;
   align-items: center;
   background-color: #ffffff;
@@ -25,7 +25,7 @@
   height: 1px;
   width: 500px;
   color: #0543b6;
-  right: -15px; 
+  right: -25px; 
   top: 10px;
 }
 
@@ -34,7 +34,7 @@
   height: 55px;
   width: 220px;
   color: #0543b6;
-  left: 20px; 
+  left: 35px; 
   top: -6px;
 }
 
