@@ -20,6 +20,11 @@ function Appbar() {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
   const img = require('../image/Activity.png');
   const [activeLink, setActiveLink] = useState("");
+  const [refresh, setRefresh] = useState(false);
+
+  const handleRefresh = () => {
+    setRefresh(!refresh); 
+  };
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -62,7 +67,8 @@ function Appbar() {
             variant="h6"
             noWrap
             component="a"
-            href="/home"
+            href=""
+            onClick={handleRefresh}
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
