@@ -1,3 +1,5 @@
+import { Button } from "@mui/material";
+
 function DetailAct() {
   return (
     <div className="images" style={{ display: "flex", flexDirection: "column" }}>
@@ -34,22 +36,10 @@ function DetailAct() {
             <br />
             <p style={{ fontSize:"32px", fontWeight: "bold", margin: 0 }}>ปิดรับสมัครเมื่อจำนวนคนที่สมัครเต็ม</p>
           </div>
-          <button 
-            type="button" 
-            className="btn btn-primary" 
-            style={{ 
-              marginTop: "20px",
-              fontSize: "28px",
-              fontWeight: "bold",
-              backgroundColor: "#f1dd68",
-              color: "#fff",
-              borderRadius: "10px",
-              padding: "15px 40px",
-              boxShadow: "3px 3px 6px #ccc"
-            }}
-          >
-          สมัครเลย!!!
-          </button>
+          <br />
+          <Button variant="contained" style={{ fontSize: "24px", padding: "20px" }}>
+            สมัครเลย!!
+          </Button>
 
         </div>
       </div>
