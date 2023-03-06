@@ -1,59 +1,51 @@
-import { ChangeEvent, useEffect, useState } from 'react';
-import { Grid, MenuItem, Select, SelectChangeEvent, TextField, Typography } from '@mui/material';
+import { ChangeEvent, useState } from 'react';
+import { SelectChangeEvent} from '@mui/material';
 import Result from '../models/Result';
 import AppBar from '../components/appbar';
 import './payment.css';
 
 function Payment() {
   const [home, setHome] = useState<Result[]>([]);
-  const [selectFilter, setSelectFilter] = useState('');
-  const [searchFilter, setSearchFilter] = useState('');
-
-  const fetchPayment = async () => {
-    let params: { keyword?: string, isPinned?: boolean } = {}
-    if (searchFilter) {
-      params.keyword = searchFilter
-    }
-  };
-
-  const handleChangeSearchFilter = (event: ChangeEvent<HTMLInputElement>) => {
-    setSearchFilter(event.target.value);
-  };
-
-  const handleChangeSelectFilter = (event: SelectChangeEvent) => {
-    setSelectFilter(event.target.value);
-  };
-  
 
   return (
     <>
     <AppBar />
-      <header className="header">
+    <header className="header">
         <div className="container">
         </div>
       </header>
-
-      <section className="contact">
-        <div className="container">
-          <div className="contact_area">
-            <h1>การสมัคร</h1>
-                <h3>ข้อมูลผู้สมัคร</h3>
-            <form>
-              <label>ชื่อ</label><br />
-              <input type="text" placeholder="" /><br />
-              <label>สกุล</label><br />
-              <input type="text" placeholder="" /><br />
-              <label>อีเมล</label><br />
-              <input type="email" placeholder="" /><br />
-              <label>เบอร์โทร</label><br />
-              <input type="text" placeholder="" /><br />
-              <button>ยืนยัน</button><br />
-            </form>
-          </div>
+      <div className="payment-container"> 
+        <div className="payment-container05">
+          <form className="payment-form11">
+          <h1>Payment</h1><br></br>
+            <span className="payment-text03">กรุณาสแกนเพื่อชำระเงิน</span>
+            <img
+              src="https://sv1.picz.in.th/images/2023/03/03/etU5Fu.png"
+              className="payment-image2"
+            />
+          </form>
+        <div className="payment-container06">
+          <h1 className="payment-text04">
+          </h1>
+          <text className="pay">
+            ธนาคารกสิกรไทย : หมายเลขบัญชี 111-111-1111
+          </text>
+          <text className="pay">
+            ชื่อบัญชี Activity-HUB
+          </text>
+          <text className="pay">
+          กรุณาแนบไฟล์สลิปการโอนเงิน
+          </text>
+            <div className="limit-file">
+              <text>(อัปโหลดไฟล์ไม่เกิน 2MB)</text>
+            </div>
+          <input type='file' id="myFile" name='filename'></input>
+          <button className="button">ยืนยัน</button>
         </div>
-      </section>
+      </div>
+      </div>
     </>
-  );
+  )
 };
 
 export default Payment;

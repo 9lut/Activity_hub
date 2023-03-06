@@ -1,77 +1,95 @@
-body {
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  .container {
-    width: 960px;
-    margin: 0 auto;
-    
   }
 
-.container {
+  .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 70vh;
-}
-  .header {
-    background: #666 url(../image/backgroundhome.png) no-repeat;
-    background-position: center center;
+    width: 100%;
+    height: 50vh;
+    position: absolute;
+  }
+  
+  .image {
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://sgp1.vultrobjects.com/img-in-th/UBMoxl.jpeg');
     background-size: cover;
-    width: 100%;
-    height: 450px;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
   }
+
+    .payment-container05 {
+      width: 100%;
+      height: 558px;
+      display: flex;
+      align-self: center;
+      align-items: center;
+      justify-content: center;
+    }
+    .payment-form11 {
+      gap: var(--dl-space-space-unit);
+      width: 499px;
+      height: 100%;
+      display: flex;
+      align-self: center;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .payment-text03 {
+      font-weight: 600;
+      font-size: 22px;
+      font-family: Pridi;
+    }
+    .payment-image2 {
+      width: 351px;
+      height: 346px;
+      align-self: center;
+      object-fit: cover;
+    }
+    .payment-container06 {
+      flex: 0 0 auto;
+      width: 676px;
+      height: 380px;
+      display: flex;
+      align-self: center;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
   
+    .pay {
+      font-weight: 600;
+      margin-top: 10px;
+      width: auto;
+      height: var(--dl-size-size-tripleunit);
+      font-family: Pridi;
+    }
   
-  .contact {
-    width: 100%;
-    height: 515px;
-  }
+    .limit-file {
+      color: rgb(255, 0, 0);
+      font-family: Pridi;
+    }
   
-  .contact_area h1 {
-    font-weight: normal;
-    
-  }
-  .contact_area input {
-    margin: 10px 0;
-    border: 2px solid #333;
-    width: 350px;
-    padding: 10px;
-  }
-  
-  .contact_area textarea {
-    margin: 10px 0;
-    border: 2px solid #333;
-    width: 350px;
-    padding: 10px;
-  }
-  
-  .contact_area button {
-    padding: 10px;
-    width: 90px;
-    background: #333;
-    color: #fff;
-    border: 2px solid transparent;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    cursor: pointer;
-  }
-  .contact_area button:hover {
-    background: #fff;
-    color: #333;
-    border: 2px solid #333;
-  }
-  
-  footer {
-    background: #333;
-    margin-top: 60px;
-    padding: 20px;
-    text-align: center;
-    color: #fff;
-  }
-  footer p {
-    margin: 0;
-  }
+.button {
+        padding: 10px;
+        width: 100px;
+        height: auto;
+        background: #333;
+        color: #fff;
+        border: px solid transparent;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+.button:hover {
+        background: #fff;
+        color: #333;
+        border: 2px solid #333;
+      }
+      
+     
+
+      

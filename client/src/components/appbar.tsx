@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-const settings = ['Profile', 'สถานะการสมัคร', 'ประวัติการสมัคร'];
+const settings = ['ชำระเงิน','สถานะการสมัคร', 'ประวัติการสมัคร','ออกจากระบบ'];
 
 function Appbar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -87,7 +87,6 @@ function Appbar() {
             >
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
