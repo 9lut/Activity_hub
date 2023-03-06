@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useEffect } from "react";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -11,7 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+import { Link } from "react-router-dom";
 
 const settings = ['ชำระเงิน','สถานะการสมัคร', 'ประวัติการสมัคร','ออกจากระบบ'];
 
@@ -19,6 +19,12 @@ function Appbar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
   const img = require('../image/Activity.png');
+  const [activeLink, setActiveLink] = useState("");
+  const [refresh, setRefresh] = useState(false);
+
+  const handleRefresh = () => {
+    setRefresh(!refresh); 
+  };
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -34,17 +40,35 @@ function Appbar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    const clickedLink = event.currentTarget;
+    const clickedLinkText = clickedLink.textContent || "";
+    setActiveLink(clickedLinkText);
+  };
+
+  useEffect(() => {
+    const links = document.querySelectorAll(".home-navlink");
+    links.forEach((link) => {
+      const linkText = link.textContent || "";
+      if (linkText === activeLink) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  }, [activeLink]);
+
 
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            href=""
+            onClick={handleRefresh}
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -137,9 +161,14 @@ function Appbar() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
+                <Link
+                  to={setting === "ออกจากระบบ" ? "/logout" : setting === "ชำระเงิน" ? "/payment" : setting === "สถานะการสมัคร" ? "/login" : "/Profile"}
+                  style={{ textDecoration: "none" }}
+                >
+                 <MenuItem onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">{setting}</Typography>
+                 </MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>

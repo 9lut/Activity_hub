@@ -41,10 +41,11 @@ function AdminAppbar() {
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
+            className='ICON'
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            href="/AllAct"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },

@@ -11,13 +11,14 @@ import AllAct from "./page2/allAct";
 import From from "./page1/from";
 import Payment from "./page1/payment";
 import DetailAct from "./page1/DetailActPage";
+import Logout from "./page1/logout";
 
 
 function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={< Login />} />
+        <Route path="/" element={< Home />} />
         <Route path="login" element={< Login />} />
         <Route path="Home" element={< Home />} />
         <Route path="register" element={<Register/>} />
@@ -27,6 +28,7 @@ function App() {
         <Route path="from" element={<From />}/>
         <Route path="payment" element={<Payment />}/>
         <Route path="detailact" element={<DetailAct />} />
+        <Route path="logout" element={<Logout />} />
       </Routes>
     </div>
   );
