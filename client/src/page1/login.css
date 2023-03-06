@@ -16,6 +16,12 @@
   height: 100vh;
 }
 
+.container {
+  position: relative;
+  top:50px;
+  right:400px;
+}
+
 .Username{
   color:black ;
   padding-right: 9em;

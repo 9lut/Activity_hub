@@ -42,12 +42,11 @@ const Login: React.FC = (props) => {
   };
   
   return (
-    <><div className="backgroundimage">
+    <div className="backgroundimage">
     <div className="container">
-      <div className="image">
-        <div>
           <img src={img} className="logo" />
-        </div>
+    </div>
+
         <form className="form" onSubmit={handleSubmit}>
           <p className="heading">เข้าสู่ระบบ</p>
           <p className="Username">บัญชีผู้ใช้</p>
@@ -98,8 +97,8 @@ const Login: React.FC = (props) => {
           </div>
         </form>
       </div>
-    </div>
-    </div></>
+    
+
   );
 };
 
