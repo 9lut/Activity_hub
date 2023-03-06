@@ -16,12 +16,6 @@
   height: 100vh;
 }
 
-.container {
-  position: relative;
-  top:50px;
-  right:400px;
-}
-
 .Username{
   color:black ;
   padding-right: 9em;
@@ -45,7 +39,7 @@
   justify-content: space-evenly;
   position: relative;
   top:170px;
-  right:-150px
+  right:-400px
 }
 
 .form {
@@ -64,6 +58,8 @@
   border-radius: 25px;
   transition: .4s ease-in-out;
   box-shadow: rgba(66, 66, 66, 0.4) 1px 2px 2px;
+  position: relative;
+  right:-100px
 }
 
 

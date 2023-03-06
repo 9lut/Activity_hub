@@ -43,9 +43,7 @@ const Login: React.FC = (props) => {
   
   return (
     <div className="backgroundimage">
-    <div className="container">
           <img src={img} className="logo" />
-    </div>
 
         <form className="form" onSubmit={handleSubmit}>
           <p className="heading">เข้าสู่ระบบ</p>
