@@ -10,7 +10,7 @@ import Profile from './page1/Profile'
 import Homepage from './page1/Homepage';
 import AllAct from "./page2/allAct";
 import Payment from "./page1/payment";
-
+import DetailAct from "./page1/DetailActPage";
 
 function App() {
   return (
@@ -21,9 +21,9 @@ function App() {
         <Route path="Home" element={< Home />} />
         <Route path="register" element={<Register/>} />
         <Route path="/Profile" element={<Profile />} />
-        {/* <Route path="homepage" element={<Homepage />}/> */}
         <Route path="AllAct" element={<AllAct />}/>
         <Route path="payment" element={<Payment />}/>
+        <Route path="detailact" element={<DetailAct />} />
       </Routes>
     </div>
   );
