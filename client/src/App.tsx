@@ -22,10 +22,7 @@ function App() {
         <Route path="Home" element={< Home />} />
         <Route path="register" element={<Register/>} />
         <Route path="/Profile" element={<Profile />} />
-<<<<<<< HEAD
         <Route path="homepage" element={<Homepage />}/>
-=======
->>>>>>> 93fa1cb0eeb182fd73c124410869fe22daa27e71
         <Route path="AllAct" element={<AllAct />}/>
         <Route path="from" element={<From />}/>
         <Route path="payment" element={<Payment />}/>
