@@ -10,7 +10,7 @@ import Homepage from './page1/Homepage';
 import AllAct from "./page2/allAct";
 import From from "./page1/from";
 import Payment from "./page1/payment";
-
+import DetailAct from "./page1/DetailActPage";
 
 
 function App() {
@@ -22,10 +22,14 @@ function App() {
         <Route path="Home" element={< Home />} />
         <Route path="register" element={<Register/>} />
         <Route path="/Profile" element={<Profile />} />
+<<<<<<< HEAD
         <Route path="homepage" element={<Homepage />}/>
+=======
+>>>>>>> 93fa1cb0eeb182fd73c124410869fe22daa27e71
         <Route path="AllAct" element={<AllAct />}/>
         <Route path="from" element={<From />}/>
         <Route path="payment" element={<Payment />}/>
+        <Route path="detailact" element={<DetailAct />} />
       </Routes>
     </div>
   );
