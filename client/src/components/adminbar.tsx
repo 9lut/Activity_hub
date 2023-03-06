@@ -44,7 +44,7 @@ function AdminAppbar() {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            href="/AllAct"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
