@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
 const settings = ['Admin'];
+const img = require('../image/Activity.png');
 
 function AdminAppbar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -54,7 +55,7 @@ function AdminAppbar() {
               textDecoration: 'none',
             }}
           >
-            <img src="../image/Activity.png" style={{width:'250px',height:'40px',position:'relative',top:'5px'}}/>
+            <img src={img} style={{width:'80px',height:'70px',position:'relative',top:'5px'}}/>
           </Typography>
           
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
@@ -73,7 +74,6 @@ function AdminAppbar() {
             </Tooltip>
             <Menu
               sx={{ mt: '45px' }}
-              id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
                 vertical: 'top',
@@ -94,7 +94,13 @@ function AdminAppbar() {
               ))}
             </Menu>
           </Box>
-          <Button variant="contained">ออกจากระบบ</Button>
+          <Box
+            m={1}//margin
+            display="flex"
+            justifyContent="flex-end"
+            alignItems="flex-end">
+          <Button className='OutButton' variant="contained">ออกจากระบบ</Button>
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>
