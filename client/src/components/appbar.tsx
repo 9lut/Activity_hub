@@ -156,7 +156,7 @@ function Appbar() {
             >
               {settings.map((setting) => (
                 <Link
-                  to={setting === "ออกจากระบบ" ? "/logout" : setting === "ชำระเงิน" ? "/payment" : setting === "สถานะการสมัคร" ? "/status" : "/Profile"}
+                  to={setting === "ออกจากระบบ" ? "/logout" : setting === "ชำระเงิน" ? "/payment" : setting === "สถานะการสมัคร" ? "/status" : "/activityhistory"}
                   style={{ textDecoration: "none" }}
                 >
                  <MenuItem onClick={handleCloseUserMenu}>

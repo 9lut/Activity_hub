@@ -13,6 +13,7 @@ import Payment from "./page1/payment";
 import DetailAct from "./page1/DetailActPage";
 import Logout from "./page1/logout";
 import Status from "./page1/status";
+import ActivityHistory from "./page1/activityhistory";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Route path="detailact" element={<DetailAct />} />
         <Route path="logout" element={<Logout />} />
         <Route path="status" element={<Status />} />
+        <Route path="activityhistory" element={<ActivityHistory />} />
       </Routes>
     </div>
   );
