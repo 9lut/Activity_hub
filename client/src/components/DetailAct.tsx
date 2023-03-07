@@ -1,6 +1,8 @@
 import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function DetailAct() {
+  
   return (
     <div className="images" style={{ display: "flex", flexDirection: "column" }}>
       <img
@@ -37,10 +39,11 @@ function DetailAct() {
             <p style={{ fontSize:"32px", fontWeight: "bold", margin: 0 }}>ปิดรับสมัครเมื่อจำนวนคนที่สมัครเต็ม</p>
           </div>
           <br />
-          <Button variant="contained" style={{ fontSize: "24px", padding: "20px" }}>
-            สมัครเลย!!
-          </Button>
-
+          <Link to="/from">
+            <Button variant="contained" style={{ fontSize: "24px", padding: "20px" }}>
+              สมัครเลย!!
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
