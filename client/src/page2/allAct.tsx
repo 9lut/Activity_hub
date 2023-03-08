@@ -1,7 +1,7 @@
 import { ChangeEvent, useEffect, useState } from 'react';
 import { Divider, Grid, List, MenuItem, Select, SelectChangeEvent, TextField, Typography } from '@mui/material';
 import { Box, maxWidth } from '@mui/system';
-import AdminAppBar from '../components/appbar';
+import AdminAppBar from '../components/adminbar';
 import CardHome from '../components/card';
 import '../page1/Home.css';
 import ActivityHub from '../repositories/index';

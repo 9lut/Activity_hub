@@ -1,0 +1,9 @@
+.CardMedia {
+    position:relative;
+    right:100px
+}
+
+.description {
+    position: relative;
+    right: -50px
+}
