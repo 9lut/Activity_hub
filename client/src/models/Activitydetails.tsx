@@ -1,37 +1,30 @@
-export default interface ActivityDetails{
+interface Category {
     id: number;
-    attributes: {
-        image: any;
-        event: React.ReactNode;
-        name: string;
-        location: string;
-        categories: {
-            data: [
-                {
-                    id: number;
-                    attributes: {
-                        name : string;
-                    };
-                }
-            ];
-        };
-        cover: {
-            data: {
-                id: number;
-                attributes: {
-                    name: string;
-                };
-            };
-        };
-        activity_date: {
-            data: {
-                attributes: {
-                    first_date: string;
-                    end_date: string;
-                    event: string;
-                };
-            };
-        };
-    };
+    name: string;
   }
+  
+  interface CoverImage {
+    id: number;
+    name: string;
+  }
+  
+  interface ActivityDate {
+    first_date: string;
+    end_date: string;
+    event: string;
+  }
+  
+  interface Activity {
+    [x: string]: any;
+    id: number;
+    image: any;
+    event: string;
+    name: string;
+    location: string;
+    categories: Category[];
+    cover: CoverImage;
+    activity_date: ActivityDate;
+  }
+  
+  export default Activity;
   
