@@ -13,7 +13,6 @@ import DetailAct from "./page1/DetailActPage";
 import Logout from "./page1/logout";
 import Status from "./page1/status";
 import ActivityHistory from "./page1/activityhistory";
-import ActivityForm from './page2/activityform'
 
 function App() {
   return (
@@ -31,7 +30,6 @@ function App() {
         <Route path="logout" element={<Logout />} />
         <Route path="status" element={<Status />} />
         <Route path="activityhistory" element={<ActivityHistory />} />
-        <Route path="activityform" element={<ActivityForm />} />
       </Routes>
     </div>
   );
