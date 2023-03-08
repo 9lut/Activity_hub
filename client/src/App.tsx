@@ -5,7 +5,6 @@ import './App.css';
 import Login from './page1/login';
 import Home from './page1/Home';
 import Register from './page1/register';
-import Profile from './page1/Profile'
 import Homepage from './page1/Homepage';
 import AllAct from "./page2/allAct";
 import From from "./page1/from";
@@ -14,7 +13,7 @@ import DetailAct from "./page1/DetailActPage";
 import Logout from "./page1/logout";
 import Status from "./page1/status";
 import ActivityHistory from "./page1/activityhistory";
-
+import ActivityForm from './page2/activityform'
 
 function App() {
   return (
@@ -24,7 +23,6 @@ function App() {
         <Route path="login" element={< Login />} />
         <Route path="Home" element={< Home />} />
         <Route path="register" element={<Register/>} />
-        <Route path="/Profile" element={<Profile />} />
         <Route path="homepage" element={<Homepage />}/>
         <Route path="AllAct" element={<AllAct />}/>
         <Route path="from" element={<From />}/>
@@ -33,6 +31,7 @@ function App() {
         <Route path="logout" element={<Logout />} />
         <Route path="status" element={<Status />} />
         <Route path="activityhistory" element={<ActivityHistory />} />
+        <Route path="activityform" element={<ActivityForm />} />
       </Routes>
     </div>
   );
