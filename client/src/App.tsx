@@ -27,7 +27,7 @@ function App() {
         <Route path="AllAct" element={<AllAct />}/>
         <Route path="from" element={<From />}/>
         <Route path="payment" element={<Payment />}/>
-        <Route path="detailact" element={<DetailAct />} />
+        <Route path="/activity/:id" element={<DetailAct />} />
         <Route path="logout" element={<Logout />} />
         <Route path="status" element={<Status />} />
         <Route path="activityhistory" element={<ActivityHistory />} />
