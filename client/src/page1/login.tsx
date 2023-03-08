@@ -30,7 +30,7 @@ const Login: React.FC = (props) => {
         title: "คุณล็อคอินสำเร็จ",
         text: "ยินดีต้อนรับเข้าสู่ ACTIVITY_HUB",
       }).then(() => {
-        navigate("/home");
+        navigate("/Homepage");
       });
     } else {
       Swal.fire({
