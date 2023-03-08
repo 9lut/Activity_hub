@@ -2,12 +2,13 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import { Grid, MenuItem, Select, SelectChangeEvent, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import AppBar from '../components/appbar';
-import Result from '../models/Result';
 import CardHome from '../components/card';
 import './Home.css';
+import ActivityHub from '../repositories/index';
+import Activity from '../models/Activity';
 
 function Home() {
-  const [home, setHome] = useState<Result[]>([])
+  const [home, setHome] = useState<Activity[]>([])
   const [selectFilter, setSelectFilter] = useState('');
   const [searchFilter, setSearchFilter] = useState('');
 
@@ -18,6 +19,14 @@ function Home() {
     }
   }
 
+  const fetchhomeData = async () => {
+    const activity = await ActivityHub.Actity.getAll()
+    if(activity) {
+      console.log(activity)
+      setHome(activity)
+    }
+  }
+  
   const handleChangeSearchFilter = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchFilter(event.target.value);
   };
@@ -27,7 +36,7 @@ function Home() {
   };
   
   useEffect(() => {
-    fetchHome()
+    fetchhomeData()
   }, [searchFilter])
 
   return (
@@ -68,14 +77,15 @@ function Home() {
           <Typography gutterBottom variant="h5" component="div" marginTop={8}>
           Open now   
           </Typography> 
-          <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 2, sm: 8, md: 12, lg: 12, xl: 10}}>
-            <Grid marginTop={4}>
-              <CardHome />
-            </Grid>
-        </Grid>
+          <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 2, sm: 8, md: 12, lg: 12, xl: 10 }}>
+            {home.map((item) => (
+              <Grid item key={item.id} xs={2} sm={4} md={4} lg={3} xl={3}>
+                <CardHome activity={item} />
+              </Grid>
+            ))}
+          </Grid>
         </Box>
   </div>
   );
 };
-
 export default Home;

@@ -1,33 +1,43 @@
-import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import { useNavigate } from 'react-router-dom';
 import { CardActionArea } from '@mui/material';
+import Activity from '../models/Activity';
 
-export default function CardHome() {
+interface Props {
+  activity: Activity;
+}
+
+const CardHome = ({ activity }: Props) => {
+  const navigate = useNavigate();
+  const item = activity.attributes;
+  const ActivityImage = `http://localhost:1337${item.cover.data.attributes.formats.thumbnail.url}`;
+
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
+      <CardActionArea onClick={() => navigate(`/activity/${activity.id}`)}>
         <CardMedia
           component="img"
           width="400"
           height="200"
-          image="https://www.google.co.th/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fphoto%2520editing%2F&psig=AOvVaw3T_-PyecCtmZ4K7WWrjqeG&ust=1678121426018000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCPjqic2fxf0CFQAAAAAdAAAAABAD"
+          src={ActivityImage}
           alt=""
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            CN ANGEL RUN MINIMARATHON 2023    
+            {item.name}
+          </Typography>
+          /*<Typography variant="body2" color="text.secondary">
+            {item.event}*/
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          14 พฤษภาคม 2566
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-          โรงเรียนชลกันยานุกูล – สะพานชลมารถวิถี 84 พรรษา
+            {item.location}
           </Typography>
         </CardContent>
       </CardActionArea>
     </Card>
   );
-}
+};
+export default CardHome;
