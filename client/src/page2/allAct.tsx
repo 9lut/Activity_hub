@@ -52,7 +52,7 @@ function AllAct() {
           <MenuItem value={3}>กิจกรรมวิ่ง</MenuItem>
           
         </Select>
-          <Button variant="contained">Add Activity</Button>
+          <Button className ="Addbutton" variant="contained">Add Activity</Button>
               <AdminBlock/>
       </Box>
       
