@@ -1,62 +1,48 @@
-import { Box, Grid } from "@mui/material";
+import { Box, CardMedia, Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/system/Container";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
+import Activity from '../models/Activity';
 
-interface Activity {
-  id: string;
-  name: string;
-  description: string;
-  image: {
-    url: string;
-    alternativeText: string;
-  };
+interface Props {
+  activity: Activity;
 }
 
-interface AdminBlockProps {}
+const AdminBlock = ({activity}: Props) => {
+  const navigate = useNavigate();
+  const item = activity.attributes;
+  const ActivityImage = `http://localhost:1337${item.cover.data.attributes.formats.thumbnail.url}`;
 
-const AdminBlock: React.FC<AdminBlockProps> = () => {
-  const [data, setData] = useState<Activity[]>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios.get<Activity[]>("http://localhost:1337/api/activities");
-      console.log(result.data)
-      setData(result.data);
-    };
-    fetchData();
-  }, []);
 
   return (
-    <Container>
-        <Grid container spacing={2}>
-          {data.length > 0 ? (
-            data.map((activity) => (
-              <Grid item xs={12} sm={6} md={4} key={activity.id}>
-                <Box display="flex">
-                  <Box sx={{ width: "40%" }}>
-                    <img
-                      src={`${activity.image.url}`}
-                      alt={activity.image.alternativeText}
-                      style={{ maxWidth: "100%", height: "auto" }}
-                    />
-                  </Box>
-                  <Box sx={{ width: "60%", paddingLeft: "16px" }}>
-                    <Typography variant="h5" gutterBottom>
-                      {activity.name}
-                    </Typography>
-                    <Typography variant="body1">{activity.description}</Typography>
-                  </Box>
-                </Box>
-              </Grid>
-            ))
-          ) : (
-            <Typography variant="h6">No activities found.</Typography>
-          )}
-        </Grid>
-      </Container>
-  );
-};
+    <div>
+      <hr/>
+      <br/>
+    <Box onClick={() => navigate(`/activity/${activity.id}`)}>
+    <CardMedia className="CardMedia"
+          component="img"
+          
+          height="100%"
+          src={ActivityImage}
+          alt=""
+        />
+      <Typography gutterBottom variant="h5" component="div">
+            {item.name}
+          </Typography>
+          /*<Typography variant="body2" color="text.secondary">
+            {item.event}*/
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {item.location}
+          </Typography>
+    </Box>
+    <br/>
+    </div>
+  )
+}
+  
+
 
 export default AdminBlock;
