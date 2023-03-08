@@ -4,19 +4,29 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 interface Activity {
+  attributes: {
     name: string;
     location: string;
     description: string;
-    createdAt: string;
+    activity_date: {
+      data: {
+        attributes: {
+          First_date: string;
+          End_date: string;
+          event: string;
+        };
+      };
+    };
+  };
 }
 
-function DetailAct() {
+const DetailAct = () =>  {
   const { id } = useParams();
   const [activity, setActivity] = useState<Activity>();
 
   const fetchData = async () => {
-    const response = await axios.get(`http://localhost:1337/api/activities/${id}`);
-    setActivity(response.data.data.attributes);
+    const response = await axios.get(`http://localhost:1337/api/activities/${id}?populate=*`);
+    setActivity(response.data.data);
   };
 
   useEffect(() => {
@@ -27,6 +37,7 @@ function DetailAct() {
     return <div>Loading...</div>;
   }
 
+  console.log(activity);
   return (
     <>
     <header className="header">
@@ -40,20 +51,20 @@ function DetailAct() {
           <div style={{ margin: "20px 0 0 20px", textAlign: "center" }}>
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "20px" }}>
             <p style={{ fontSize: "30px", fontWeight: "bold", margin: 0 }}>
-              {activity.name}
+              {activity.attributes.name}
               </p>
           </div>
             <p style={{ fontSize:"20px", fontWeight: 300, margin: 0 }}>
-              วันที่จัดกิจกรรม : {activity.createdAt}
+              วันที่จัดกิจกรรม : {activity.attributes.activity_date.data.attributes.event}
               </p>
             <p style={{ fontSize:"20px", fontWeight: 300, margin: 0 }}>
-              สถานที่จัดกิจกรรม: {activity.location}
+              สถานที่จัดกิจกรรม: {activity.attributes.location}
               </p>
             <br />
             <div style={{ backgroundColor: "#f2f2f2", display: "inline-block", borderRadius: "10px" }}>
               <p style={{ fontSize: "25px", fontWeight: "bold", margin: "20px" }}>รายละเอียดของกิจกรรม</p>
               <p style={{ fontSize: "16px", fontWeight: 300, margin: "20px" }}>
-                {activity.description}
+                {activity.attributes.description}
               </p>
             </div>
 
@@ -71,10 +82,12 @@ function DetailAct() {
               <br />
               <div style={{ backgroundColor: "#f2f2f2", padding: "20px", borderRadius: "10px", textAlign: "center" }}>
                 <p style={{ fontSize:"24px", fontWeight: 300, margin: 0 }}>
-                  เริ่มเปิดรับสมัคร: 12 มกราคม 2022
+                  เริ่มเปิดรับสมัคร: {activity.attributes.activity_date.data.attributes.First_date}
                   </p>
                 <p style={{ fontSize:"24px", fontWeight: 300, margin: 0 }}>
-                  ปิดรับสมัคร: 20 มกราคม 2022
+                  ปิดรับสมัคร: {
+                    activity.attributes.activity_date.data.attributes.End_date
+                  }
                   </p>
                 <br />
                 <p style={{ fontSize:"25px", fontWeight: "bold", margin: 0 , color:"red"}}>
@@ -95,7 +108,7 @@ function DetailAct() {
     )}
     </section>
     </>
-  );
-}
+  )
+};
 
 export default DetailAct;
