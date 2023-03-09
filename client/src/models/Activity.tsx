@@ -1,8 +1,6 @@
 export default interface Activity {
     id: number|string;
         attributes: {
-            cover: any;
-            event: number,
             name: string,
             description: string,
             location: string,
@@ -11,8 +9,7 @@ export default interface Activity {
                         attributes: {
                             name: string,
                             }
-                        }
-                },
+                        },
             cover: {
                     id: number|string;
                     attributes: {
@@ -22,5 +19,15 @@ export default interface Activity {
                             },
                         }
                     }
+                },
+            activity_date: {
+                data :{
+                    attributes: {
+                        First_date: string;
+                        End_date: string;
+                        event: string;
+                    }
                 }
+            }
+        }
 }
