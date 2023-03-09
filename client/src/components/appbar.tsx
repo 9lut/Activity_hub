@@ -11,6 +11,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from "react-router-dom";
+import { fontFamily, shadows } from "@mui/system";
 
 const settings = ['ชำระเงิน', 'สถานะการสมัคร', 'ประวัติการสมัคร', 'ออกจากระบบ'];
 
@@ -82,7 +83,7 @@ function Appbar() {
 
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" style={{ backgroundColor: "#1F8AE3"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {!user && (
@@ -91,8 +92,11 @@ function Appbar() {
                 onClick={handleLogin}
                 style={{
                   position: 'absolute',
-                  top: '17px',
-                  right: '10px'
+                  top: '15px',
+                  right: '10px',
+                  color: 'white',
+                  fontSize: '18px',
+                  fontFamily: 'cursive'
                 }}
               >
                 เข้าสู่ระบบ
@@ -115,7 +119,7 @@ function Appbar() {
               textDecoration: 'none',
             }}
           >
-            <img src={img} style={{ width: '80px', height: '70px', position: 'relative', top: '5px' }} />
+            <img src={img} style={{ width: '90px', height: '70px', position: 'relative', top: '5px' }} />
           </Typography>
 
           <Typography
@@ -139,14 +143,14 @@ function Appbar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <Button
               onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: 'white', display: 'block' }}
+              sx={{ my: 2, color: 'white', display: 'block'}}
             >
             </Button>
           </Box>
           {user && (
             <Box sx={{ flexGrow: 0 }} onClick={handleLogout}>
               <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }} >
                   <Avatar alt="Remy Sharp" src="../image/Activity.png" />
                 </IconButton>
               </Tooltip>
@@ -172,7 +176,7 @@ function Appbar() {
                     style={{ textDecoration: "none" }}
                   >
                     <MenuItem onClick={handleCloseUserMenu}>
-                      <Typography textAlign="center">{setting}</Typography>
+                      <Typography textAlign="center" sx={{ color: 'black' }}>{setting}</Typography>
                     </MenuItem>
                   </Link>
                 ))}
