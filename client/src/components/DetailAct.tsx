@@ -8,6 +8,20 @@ interface Activity {
     name: string;
     location: string;
     description: string;
+
+    cover: {
+      data :{
+          id: number|string;
+          attributes: {
+              formats: {
+                  thumbnail: {
+                      url: string;
+                  };
+              };
+          };
+        };
+    };
+
     activity_date: {
       data: {
         attributes: {
@@ -40,7 +54,8 @@ const DetailAct = () =>  {
   console.log(activity);
   return (
     <>
-    <header className="header">
+    <header className="header1">
+      <img src={activity.attributes.cover.data.attributes.formats.thumbnail.url}></img>
       <div className="container">
       </div>
     </header>

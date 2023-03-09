@@ -17,12 +17,12 @@
       "required": true
     },
     "First_date": {
-      "type": "datetime",
-      "required": true
+      "type": "date",
+      "required": false
     },
     "End_date": {
-      "type": "datetime",
-      "required": true
+      "type": "date",
+      "required": false
     },
     "date": {
       "type": "relation",

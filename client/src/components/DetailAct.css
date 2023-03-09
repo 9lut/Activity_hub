@@ -1,10 +1,8 @@
-.images {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    position: relative; /* add this line to make position: absolute work */
+.header1 {
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 450px;
 }
   
 .ActivityHead {
