@@ -43,6 +43,16 @@ const DetailAct = () =>  {
     setActivity(response.data.data);
   };
 
+  const getUserData = () => {
+    const stringfiedUser = localStorage.getItem("user") || "";
+    if (stringfiedUser) {
+      return JSON.parse(stringfiedUser);
+    }
+    return false;
+  }
+
+  const user = getUserData()
+
   useEffect(() => {
     fetchData();
   }, [id]);
@@ -108,15 +118,26 @@ const DetailAct = () =>  {
                 <br />
                 <p style={{ fontSize:"25px", fontWeight: "bold", margin: 0 , color:"red"}}>
                   ปิดรับสมัครเมื่อจำนวนคนที่สมัครเต็ม
-                  </p>
+                </p>
               </div>
               <br />
-
-              <Link to="/from">
-                <Button variant="contained" style={{ fontSize: "20px", padding: "10px" }}>
-                  สมัครเลย!!
-                </Button>
-              </Link>
+              {!user && ( 
+                <div> 
+                  <p>คุณยังไม่ได้เข้าสู่ระบบ โปรดเข้าสู่ระบบเพื่อลงทะเบียนเข้าร่วมกิจกรรม</p>            
+                  <Link to="/login">
+                      <Button variant="contained" style={{ fontSize: "20px", padding: "10px" }}>
+                        เข้าสู่ระบบก่อน
+                      </Button>
+                  </Link>
+                </div> 
+              )}
+              {user && (               
+                <Link to="/from">
+                    <Button variant="contained" style={{ fontSize: "20px", padding: "10px" }}>
+                      สมัครเลย!!
+                    </Button>
+                </Link>
+              )}
             </div>
             </div>
           </div>
