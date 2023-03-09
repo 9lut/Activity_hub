@@ -8,7 +8,7 @@ interface Activity {
     name: string;
     location: string;
     description: string;
-
+    people: string;
     cover: {
       data :{
           id: number|string;
@@ -97,12 +97,13 @@ const DetailAct = () =>  {
               <br />
               <div style={{ backgroundColor: "#f2f2f2", padding: "20px", borderRadius: "10px", textAlign: "center" }}>
                 <p style={{ fontSize:"24px", fontWeight: 300, margin: 0 }}>
-                  เริ่มเปิดรับสมัคร: {activity.attributes.activity_date.data.attributes.First_date}
+                  เริ่มเปิดรับสมัคร: วันที่ {activity.attributes.activity_date.data.attributes.First_date}
                   </p>
                 <p style={{ fontSize:"24px", fontWeight: 300, margin: 0 }}>
-                  ปิดรับสมัคร: {
-                    activity.attributes.activity_date.data.attributes.End_date
-                  }
+                  ปิดรับสมัคร: วันที่ {activity.attributes.activity_date.data.attributes.End_date}
+                  </p>
+                  <p style={{ fontSize:"20px", fontWeight: 300, margin: 0 }}>
+                  {activity.attributes.people}
                   </p>
                 <br />
                 <p style={{ fontSize:"25px", fontWeight: "bold", margin: 0 , color:"red"}}>
