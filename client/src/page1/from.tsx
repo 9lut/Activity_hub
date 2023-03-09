@@ -4,7 +4,7 @@ import Result from '../models/Result';
 import AppBar from '../components/appbar';
 import './from.css';
 
-function Payment() {
+function Form() {
   const [home, setHome] = useState<Result[]>([]);
 
 
@@ -39,4 +39,4 @@ function Payment() {
   );
 };
 
-export default Payment;
+export default Form;
