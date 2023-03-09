@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.heading {
+  color: black;
+  font-size: 24px;
+}
+
+.backgroundimage {
+  background-image: url('https://sv1.picz.in.th/images/2023/03/10/e5kZ3u.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.Username{
+  color:black ;
+  padding-right: 9em;
+}
+
+.Password{
+  color:black ;
+  padding-right: 9em;
+}
+
+.Tag{
+  color:black ;
+  margin-top: 5px;
+
+}
+
+.logo {
+  width: 400px;;
+  height: 400px;
+  margin: auto;
+  justify-content: space-evenly;
+  position: relative;
+  top:170px;
+  right:-400px
+}
+
+.form {
+  width: 250px;
+  height: 350px;
+  display: flex;
+  margin-left: 900px;
+  margin-right: auto;
+  margin-top: -250px;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  background-color: white;
+  padding: 2.5em;
+  border-radius: 25px;
+  transition: .4s ease-in-out;
+  box-shadow: rgba(66, 66, 66, 0.4) 1px 2px 2px;
+  position: relative;
+  right:-100px
+}
+
+#heading {
+  text-align: center;
+  margin: 2em;
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  border-radius: 25px;
+  padding: 0.6em;
+  border: none;
+  outline: none;
+  color: rgb(0, 0, 0);
+  background-color: #d9d9d9;
+  box-shadow: inset 2px 5px 10px rgb(217, 217, 217);
+}
+
+.input-icon {
+  height: 1.3em;
+  width: 1.3em;
+  fill: white;
+}
+
+.input-field {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #000000;
+}
+
+.form .btn {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 2em;
+}
+
+.button1 {
+  padding: 1em;
+  padding-left: 1.1em;
+  padding-right: 1.1em;
+  margin-right: 0.5em;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-color: #0038FF;
+  border-radius: 103px;
+  color: white;
+  font-size: 15px;
+}
+
+.button1:hover {
+  background-color: rgb(106, 106, 106);
+  color: white;
+}
+
+.button2 {
+  padding: 0.5em;
+  padding-left: 2.3em;
+  padding-right: 2.3em;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-color: #444444;
+  color: white;
+}
+
+.button2:hover {
+  background-color: hwb(0 0% 100%);
+  color: white;
+}
+
+.button3 {
+  margin-bottom: 3em;
+  padding: 0.5em;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-color: #252525;
+  color: white;
+}
+
+.button3:hover {
+  background-color: red;
+  color: white;
+}
+
+.img.google-img{
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+}
+
+img.google-img{
+  height: 20px;
+  width: 20px;
+  object-fit: cover;
+}
+
+a.google{
+  border: 1px solid #CACACA;
+}
+
+a.google span{
+  font-weight: 500;
+  opacity: 0.6;
+  color: #232836;
+}

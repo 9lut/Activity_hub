@@ -13,9 +13,10 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Admin'];
+const img = require('../image/Activity.png');
 
-function ResponsiveAppBar() {
+function AdminAppbar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
@@ -35,15 +36,14 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="relative">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
-            variant="h6"
             noWrap
             component="a"
-            href="/"
+            href="/allAct"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -54,58 +54,9 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            <img src="../image/Activity (1).png" style={{width:'250px',height:'40px',position:'relative',top:'5px'}}/>
+            <img src={img} style={{width:'80px',height:'70px',position:'relative',top:'5px'}}/>
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-            </Menu>
-          </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
+          
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               <Button
                 onClick={handleCloseNavMenu}
@@ -117,12 +68,11 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Remy Sharp" src="../image/Activity.png" />
               </IconButton>
             </Tooltip>
             <Menu
               sx={{ mt: '45px' }}
-              id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
                 vertical: 'top',
@@ -143,9 +93,16 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
+          <Box
+            m={1}//margin
+            display="flex"
+            justifyContent="flex-end"
+            alignItems="flex-end">
+          <Button className='OutButton' variant="contained">ออกจากระบบ</Button>
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>
   );
 }
-export default ResponsiveAppBar;
+export default AdminAppbar;

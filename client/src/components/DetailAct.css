@@ -1,0 +1,27 @@
+.header1 {
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+  
+.ActivityHead {
+    color: #000;
+    font-size: 36px;
+    font-weight: 500;
+    font-family: Ek Mukta, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    position: absolute;
+    left: 20px; /* change this to 0 */
+    bottom: 20px; /* add this line to position at the bottom */
+}
+  
+._142566 {
+    color: #000;
+    font-size: 24px;
+    font-family: Ek Mukta, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    position: absolute;
+    left: 20px; /* change this to 0 */
+    bottom: 60px; /* add this line to position below the date */
+}

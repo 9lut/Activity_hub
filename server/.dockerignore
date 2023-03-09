@@ -64,7 +64,6 @@ $RECYCLE.BIN/
 ############################
 # Logs and databases
 ############################
-.tmp
 *.log
 *.sql
 *.sqlite
@@ -112,3 +111,4 @@ build
 .strapi-updater 2.json
 .strapi-updater 3.json
 .strapi-updater 4.json
+Dockerfile
