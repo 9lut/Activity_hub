@@ -76,7 +76,8 @@ function Home() {
           </Select>
           <Typography gutterBottom variant="h5" component="div" marginTop={8}>
           Open now   
-          </Typography> 
+          </Typography>
+          <Box className='AcBox'>
           <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 2, sm: 8, md: 12, lg: 12, xl: 10 }}>
             {home.map((item) => (
               <Grid item key={item.id} xs={2} sm={4} md={4} lg={3} xl={3}>
@@ -84,6 +85,7 @@ function Home() {
               </Grid>
             ))}
           </Grid>
+          </Box>
         </Box>
   </div>
   );
