@@ -75,8 +75,7 @@ const Login: React.FC = (props) => {
               width="16"
               height="16"
               fill="currentColor"
-              viewBox="0 0 16 16"
-            >
+              viewBox="0 0 16 16">
             </svg>
             <input
               placeholder="Password"
