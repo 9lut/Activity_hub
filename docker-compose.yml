@@ -30,7 +30,7 @@ services:
       DATABASE_PORT: 3306
       DATABASE_NAME: demo
       DATABASE_USERNAME: root
-      DATABASE_PASSWORD: secret
+      DATABASE_PASSWORD: godzila14
       APP_KEYS: 8a0e92a9f7749f1baa4f8c4b0dc61d4a
       JWT_SECRET: Et1+TcTvdNxDxhX2itJ+ZnoBkC7zUfbp6Ue1zsu/j/zDah+1PKRJfYZXh7VZxrL8
       ADMIN_JWT_SECRET: Jgq3hVfaLxhd9Xc7OuNOyRh0C7h3i3ZWInV7bY+vCuBtzV7Lx42x9Xr0wxT8TzmT
