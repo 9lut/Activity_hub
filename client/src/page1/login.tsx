@@ -88,11 +88,13 @@ const Login: React.FC = (props) => {
             <button className="button1" type="submit">ลงชื่อเข้าใช้</button>
           </div>
           <div className="media-options">
+            <a href="http://localhost:1337/api/connect/google" className="field google">
+                <img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png" className="google-img" />
+                <span>เข้าสู่ระบบโดย Google</span>
+              </a>
           </div>
         </form>
       </div>
-    
-
   );
 };
 

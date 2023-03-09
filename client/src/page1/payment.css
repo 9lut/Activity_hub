@@ -1,95 +1,96 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
+  margin: 0;
+  padding: 0;
+}
 
-  .container {
+.container {
+  display: flex;
+  width: 100%;
+  height: 50vh;
+  position: absolute;
+}
+
+.image {
+  width: 100%;
+  height: 100vh;
+  background-image: url('https://sgp1.vultrobjects.com/img-in-th/UBMoxl.jpeg');
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+}
+
+  .payment-container05 {
+    width: 100%;
+    height: 558px;
     display: flex;
-    width: 100%;
-    height: 50vh;
-    position: absolute;
-  }
-  
-  .image {
-    width: 100%;
-    height: 100vh;
-    background-image: url('https://sgp1.vultrobjects.com/img-in-th/UBMoxl.jpeg');
-    background-size: cover;
-    background-position: center;
+    align-self: center;
     align-items: center;
     justify-content: center;
   }
+  .payment-form11 {
+    gap: var(--dl-space-space-unit);
+    width: 499px;
+    height: 100%;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .payment-text03 {
+    font-weight: 600;
+    font-size: 22px;
+    font-family: Pridi;
+  }
+  .payment-image2 {
+    width: 351px;
+    height: 346px;
+    align-self: center;
+    object-fit: cover;
+  }
+  .payment-container06 {
+    flex: 0 0 auto;
+    width: 676px;
+    height: 380px;
+    display: flex;
+    align-self: center;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 
-    .payment-container05 {
-      width: 100%;
-      height: 558px;
-      display: flex;
-      align-self: center;
-      align-items: center;
-      justify-content: center;
-    }
-    .payment-form11 {
-      gap: var(--dl-space-space-unit);
-      width: 499px;
-      height: 100%;
-      display: flex;
-      align-self: center;
-      align-items: center;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .payment-text03 {
-      font-weight: 600;
-      font-size: 22px;
-      font-family: Pridi;
-    }
-    .payment-image2 {
-      width: 351px;
-      height: 346px;
-      align-self: center;
-      object-fit: cover;
-    }
-    .payment-container06 {
-      flex: 0 0 auto;
-      width: 676px;
-      height: 380px;
-      display: flex;
-      align-self: center;
-      align-items: flex-start;
-      flex-direction: column;
-      justify-content: flex-start;
-    }
-  
-    .pay {
-      font-weight: 600;
-      margin-top: 10px;
-      width: auto;
-      height: var(--dl-size-size-tripleunit);
-      font-family: Pridi;
-    }
-  
-    .limit-file {
-      color: rgb(255, 0, 0);
-      font-family: Pridi;
-    }
-  
-.button {
-        padding: 10px;
-        width: 100px;
-        height: auto;
-        background: #333;
-        color: #fff;
-        border: px solid transparent;
-        text-transform: uppercase;
-        transition: all 0.3s ease;
-        cursor: pointer;
-      }
-.button:hover {
-        background: #fff;
-        color: #333;
-        border: 2px solid #333;
-      }
-      
-     
+  .pay {
+    font-weight: 600;
+    margin-top: 10px;
+    width: auto;
+    height: var(--dl-size-size-tripleunit);
+    font-family: Pridi;
+  }
 
-      
+.img.line-img{
+position: absolute;
+top: 50%;
+left: 15px;
+transform: translateY(-50%);
+}
+
+img.line-img{
+height: 20px;
+width: 20px;
+object-fit: cover;
+}
+
+a.line{
+border: 1px solid #CACACA;
+}
+
+a.line span{
+font-weight: 500;
+opacity: 0.6;
+color: #232836;
+}
+
+
+
+    

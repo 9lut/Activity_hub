@@ -34,13 +34,14 @@ function Payment() {
             ชื่อบัญชี Activity-HUB
           </text>
           <text className="pay">
-          กรุณาแนบไฟล์สลิปการโอนเงิน
+          กดลิงก์ไลน์ด้านล่าง
           </text>
-            <div className="limit-file">
-              <text>(อัปโหลดไฟล์ไม่เกิน 2MB)</text>
-            </div>
-          <input type='file' id="myFile" name='filename'></input>
-          <button className="button">ยืนยัน</button>
+          <div className="media-options">
+            <a href="https://line.me/ti/p/31P7Csps4g" className="field line">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" className="line-img" />
+                <span>กดลิงก์เพื่อส่งหลักฐานการชำระเงิน</span>
+              </a>
+          </div>
         </div>
       </div>
       </div>
