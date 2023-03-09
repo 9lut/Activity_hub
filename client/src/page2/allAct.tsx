@@ -7,6 +7,7 @@ import '../page1/Home.css';
 import ActivityHub from '../repositories/index';
 import Activity from '../models/Activity';
 import AdminBlock from '../components/adminblock';
+import './allAct.css'
 
 const style = {
   width: '100%',
@@ -48,6 +49,7 @@ function Home() {
   return (
     <div>
       <AdminAppBar />
+      <Box className="Contain">
         <Box className="allAct-container">
           <Select
             className="filter-select"
@@ -70,8 +72,8 @@ function Home() {
                 </Grid>
               ))}
             </List>
-            
             </Box> 
+      </Box>
     </div>
   );
 };

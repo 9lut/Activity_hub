@@ -20,3 +20,8 @@
     top: -50px;
     right: -680px;
   }
+
+  .Contain {
+    position: relative;
+    left: 100px
+  }
