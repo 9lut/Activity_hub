@@ -1,26 +1,43 @@
 import { ChangeEvent, useEffect, useState } from 'react';
-import { Grid, MenuItem, Select, SelectChangeEvent, TextField, Typography } from '@mui/material';
+import { Button, Grid, MenuItem, Select, SelectChangeEvent, TextField, Typography } from '@mui/material';
 import { Box, Container } from '@mui/system';
 import AdminAppBar from '../components/adminbar';
 import Result from '../models/Result';
 import './addActivity.css'
 
+const AddActivity = () => {
+  const [user, setUser] = useState({
+    activity_name: "",
+    activity_date: "",
+    activity_firstenddate: "",
+    activity_price: "",
+    activity_type: "",
+    activity_amount: "",
+    activity_subamount: "",
+    activity_other: ""
+  });
 
-function AddActivity() {
-    const [home, setHome] = useState<Result[]>([])
-    const [selectFilter, setSelectFilter] = useState('');
-    const [searchFilter, setSearchFilter] = useState('');
+  const { activity_name, activity_date, activity_firstenddate, activity_price, activity_amount, activity_subamount, activity_other} = user;
+
+  const onInputChange = (e: ChangeEvent<HTMLInputElement>| SelectChangeEvent) => {
+    setUser({...user, [e.target.name]: e.target.value});
+  }
+
+// function AddActivity() {
+//     const [home, setHome] = useState<Result[]>([])
+//     const [selectFilter, setSelectFilter] = useState('');
+//     const [searchFilter, setSearchFilter] = useState('');
   
-    const fetchHome = async () => {
-      let params: { keyword?: string, isPinned?: boolean } = {}
-      if (searchFilter) {
-        params.keyword = searchFilter
-      }
-    }
+//     const fetchHome = async () => {
+//       let params: { keyword?: string, isPinned?: boolean } = {}
+//       if (searchFilter) {
+//         params.keyword = searchFilter
+//       }
+//     }
    
-    useEffect(() => {
-      fetchHome()
-    }, [searchFilter])
+//     useEffect(() => {
+//       fetchHome()
+//     }, [searchFilter])
     
     return (
       <Box>
@@ -31,60 +48,76 @@ function AddActivity() {
         <br />
         <form>
           <div style={{ marginBottom: '20px' }}>
-            <p>ชื่อผู้ติดต่อ</p>
-            <input type="text" />
-          </div>
-
-          <div style={{ marginBottom: '20px' }}>
-            <p>อีเมล</p>
-            <input type="text" />
-          </div>
-
-          <div style={{ marginBottom: '20px' }}>
-            <p>เบอร์โทร</p>
-            <input type="text" />
-          </div>
-
-          <div style={{ marginBottom: '20px' }}>
             <p>ชื่องาน</p>
-            <input type="text" />
+            <input type="text"
+            name="activity_name"
+            value={activity_name}
+            onChange={e => onInputChange(e)} />
           </div>
 
           <div style={{ marginBottom: '20px' }}>
             <p>วันที่จัดงาน</p>
-            <input />
+            <input 
+            name="activity_date"
+            value={activity_date}
+            onChange={e => onInputChange(e)}/>
           </div>
 
           <div style={{ marginBottom: '20px' }}>
-            <p>วันที่เปิดรับสมัคร</p>
-            <input />
+            <p>วันที่เปิด-ปิดรับสมัคร</p>
+            <input 
+            name="activity_firstenddate"
+            value={activity_firstenddate}
+            onChange={e => onInputChange(e)}/>
           </div>
 
           <div style={{ marginBottom: '20px' }}>
             <p>ราคาค่าสมัคร</p>
-            <input />
+            <input 
+            name="activity_price"
+            value={activity_price}
+            onChange={e => onInputChange(e)}/>
           </div>
 
-          <div style={{ marginBottom: '20px' }}>
-            <p>ประเภทกิจกรรม</p>
-            <input />
-          </div>
+          {/* <Box style={{ marginBottom: '20px' }}>
+            <p>ประเภทกิจกรรม</p> 
+            <Select
+            className="SelectType"
+            name="activity_type"
+            value={activity_type}
+            onChange={e => onInputChange(e)}>
+              <MenuItem disabled value="">
+                ประเภทกิจกรรม
+              </MenuItem>
+              <MenuItem>กิจกรรมค่าย</MenuItem>
+              <MenuItem>กิจกรรมวิ่ง</MenuItem>
+            </Select>
+          </Box> */}
 
           <div style={{ marginBottom: '20px' }}>
             <p>จำนวนผู้รับ</p>
-            <input />
+            <input 
+            name="activity_amount"
+            value={activity_amount}
+            onChange={e => onInputChange(e)}/>
           </div>
 
           <Box className="SubAmount" style={{ marginBottom: '20px' }}>
             <p>สำรอง</p>
-            <input />
+            <input 
+            name="activity_subamount"
+            value={activity_subamount}
+            onChange={e => onInputChange(e)}/>
           </Box>
 
           <div style={{ marginBottom: '20px' }}>
             <p>รายละเอียดอื่นๆ</p>
-            <input type="text" />
+            <input type="text" 
+            name="activity_other"
+            value={activity_other}
+            onChange={e => onInputChange(e)}/>
           </div>
-
+          <Button variant='contained'>GG</Button>
         </form>
       </Container>
     </Box>
