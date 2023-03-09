@@ -15,6 +15,7 @@
   align-items: center;
   background-color: #ffffff;
   position: absolute;
+  right:100px;
   bottom: 60px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
@@ -35,7 +36,7 @@
   width: 220px;
   color: #0543b6;
   left: 35px; 
-  top: -6px;
+  top: -5px;
 }
 
 .search-all{
@@ -51,4 +52,9 @@
 .search-camp{
   font-size: 16px;
   color:#000000;
+}
+
+.AcBox {
+  position:relative;
+  right:-50px
 }
