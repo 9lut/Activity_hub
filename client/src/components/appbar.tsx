@@ -13,7 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { Link } from "react-router-dom";
 import { fontFamily, shadows } from "@mui/system";
 
-const settings = ['ชำระเงิน', 'สถานะการสมัคร', 'ประวัติการสมัคร', 'ออกจากระบบ'];
+const settings = ['ชำระเงิน', 'ประวัติการสมัคร', 'ออกจากระบบ'];
 
 function Appbar() {
   interface Props {
@@ -172,7 +172,7 @@ function Appbar() {
               >
                 {settings.map((setting) => (
                   <Link
-                    to={setting === "ออกจากระบบ" ? "/logout" : setting === "ชำระเงิน" ? "/payment" : setting === "สถานะการสมัคร" ? "/status" : "/activityhistory"}
+                    to={setting === "ออกจากระบบ" ? "/logout" : setting === "ชำระเงิน" ? "/payment" : "/activityhistory"}
                     style={{ textDecoration: "none" }}
                   >
                     <MenuItem onClick={handleCloseUserMenu}>

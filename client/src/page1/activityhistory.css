@@ -1,4 +1,4 @@
-.status-container {
+.history-container {
     width: 100%;
     display: flex;
     overflow: auto;
@@ -7,7 +7,7 @@
     flex-direction: column;
     justify-content: center;
   }
-  .status-container1 {
+  .history-container1 {
     top: 135px;
     left: 65px;
     width: 300px;
@@ -22,10 +22,9 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
   .user-image {
-    top: -5px;
-    left: 10px;
-    width: 110px;
-    height: 150px;
+    padding-bottom: 100%;
+    width: 60px;
+    height: 60px;
     position: center;
     object-fit: cover;
   }
@@ -34,7 +33,8 @@
     left: 90px;
     color: rgb(0, 0, 0);
     position: absolute;
-    font-size: 17px;
+    font-size: 20px;
+    font-weight: bold
   }
   .user-email {
     top: 400px;
@@ -48,7 +48,7 @@
     position: absolute;
     font-size: 25px;
   }
-  .status-container2 {
+  .history-container2 {
     top: 190px;
     left: 415px;
     width: 590px;
@@ -58,7 +58,7 @@
     align-items: flex-start;
     border-bottom: 0.5px solid black;
   }
-  .status-image {
+  .history-image {
     top: 10px;
     left: 38px;
     width: 185px;
@@ -75,6 +75,12 @@
   .act-date {
     top: 35px;
     left: 250px;
+    position: absolute;
+    font-size: 14px;
+  }
+  .act-status {
+    left: 250px;
+    bottom: 40px;
     position: absolute;
     font-size: 14px;
   }
