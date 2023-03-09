@@ -4,6 +4,7 @@ import { Box, Container } from '@mui/system';
 import AdminAppBar from '../components/adminbar';
 import Result from '../models/Result';
 import './addActivity.css'
+import {Form} from 'react-bootstrap'
 
 const AddActivity = () => {
   const [user, setUser] = useState({
@@ -17,10 +18,16 @@ const AddActivity = () => {
     activity_other: ""
   });
 
+  const [selectActivityType, setSelectActivityType] = useState('')
+
   const { activity_name, activity_date, activity_firstenddate, activity_price, activity_amount, activity_subamount, activity_other} = user;
 
   const onInputChange = (e: ChangeEvent<HTMLInputElement>| SelectChangeEvent) => {
     setUser({...user, [e.target.name]: e.target.value});
+  }
+
+  const handleActicityTypeChange = (e : React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectActivityType(e.target.value)
   }
 
 // function AddActivity() {
@@ -79,9 +86,9 @@ const AddActivity = () => {
             onChange={e => onInputChange(e)}/>
           </div>
 
-          {/* <Box style={{ marginBottom: '20px' }}>
+          <Box style={{ marginBottom: '20px' }}>
             <p>ประเภทกิจกรรม</p> 
-            <Select
+            {/* <Select
             className="SelectType"
             name="activity_type"
             value={activity_type}
@@ -91,8 +98,17 @@ const AddActivity = () => {
               </MenuItem>
               <MenuItem>กิจกรรมค่าย</MenuItem>
               <MenuItem>กิจกรรมวิ่ง</MenuItem>
-            </Select>
-          </Box> */}
+            </Select> */}
+            <Form.Select
+              value={selectActivityType}
+              onChange={handleActicityTypeChange}
+              required
+            >
+              <option value="" disabled hidden>เลือกประเภทกิจกรรม</option>
+              <option value="กิจกรรมค่าย">กิจกรรมค่าย</option>
+              <option value="กิจกรรมวิ่ง">กิจกรรมวิ่ง</option>
+            </Form.Select>
+          </Box>
 
           <div style={{ marginBottom: '20px' }}>
             <p>จำนวนผู้รับ</p>
