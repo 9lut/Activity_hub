@@ -15,6 +15,7 @@ const CardHome = ({ activity }: Props) => {
   const item = activity.attributes;
   const ActivityImage = `http://localhost:1337${item.cover.data.attributes.formats.thumbnail.url}`;
 
+  // console.error(activity.attributes.activity_date.data.attributes.event)
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea onClick={() => navigate(`/activity/${activity.id}`)}>
@@ -29,8 +30,8 @@ const CardHome = ({ activity }: Props) => {
           <Typography gutterBottom variant="h5" component="div">
             {item.name}
           </Typography>
-          /*<Typography variant="body2" color="text.secondary">
-            {item.event}*/
+          <Typography variant="body2" color="text.secondary">
+            {activity.attributes.activity_date.data.attributes.event} 
           </Typography>
           <Typography variant="body2" color="text.secondary">
             {item.location}

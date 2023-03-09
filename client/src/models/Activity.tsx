@@ -11,6 +11,7 @@ export default interface Activity {
                             }
                         },
             cover: {
+                data: {
                     id: number|string;
                     attributes: {
                         formats: {
@@ -20,6 +21,7 @@ export default interface Activity {
                         }
                     }
                 },
+            }
             activity_date: {
                 data :{
                     attributes: {

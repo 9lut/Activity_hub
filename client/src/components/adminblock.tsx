@@ -37,9 +37,9 @@ const AdminBlock = ({activity}: Props) => {
           <Typography gutterBottom variant="h5" component="div">
               {item.name}
           </Typography>
-          /*<Typography variant="body2" color="text.secondary">
-              {item.event}*/
-          </Typography>
+          {/* <Typography variant="body2" color="text.secondary">
+              {item.event}
+          </Typography> */}
           <Typography variant="body2" color="text.secondary">
             {item.location}
           </Typography>
