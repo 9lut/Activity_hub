@@ -2,7 +2,7 @@
   background-position: center center;
   background-size: cover;
   width: 100%;
-  height: 450px;
+  height: 100%;
 }
   
 .ActivityHead {
@@ -25,4 +25,3 @@
     left: 20px; /* change this to 0 */
     bottom: 60px; /* add this line to position below the date */
 }
-  

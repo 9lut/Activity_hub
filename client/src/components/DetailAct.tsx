@@ -2,6 +2,7 @@ import { Button } from '@mui/material';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import './DetailAct.css'
 
 interface Activity {
   attributes: {
@@ -67,9 +68,7 @@ const DetailAct = () =>  {
   return (
     <>
     <header className="header1">
-      <img src={activityImage}></img>
-      <div className="container">
-      </div>
+      <img src={activityImage}/>
     </header>
 
     <section className="Detail">

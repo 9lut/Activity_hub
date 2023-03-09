@@ -1,5 +1,5 @@
 import { ChangeEvent, useEffect, useState } from 'react';
-import { Divider, Grid, List, MenuItem, Select, SelectChangeEvent, TextField, Typography } from '@mui/material';
+import { Button, Divider, Grid, List, MenuItem, Select, SelectChangeEvent, TextField, Typography } from '@mui/material';
 import { Box, maxWidth } from '@mui/system';
 import AdminAppBar from '../components/adminbar';
 import CardHome from '../components/card';
@@ -64,7 +64,7 @@ function Home() {
             <MenuItem value={2}>กิจกรรมค่าย</MenuItem>
             <MenuItem value={3}>กิจกรรมวิ่ง</MenuItem>
           </Select>
-             
+          <Button href='./addActivity' className="Button"variant="contained">Add Activity</Button>
             <List sx={style} component="nav" aria-label="mailbox folders">
               {home.map((item) => (
                 <Grid item key={item.id}>
