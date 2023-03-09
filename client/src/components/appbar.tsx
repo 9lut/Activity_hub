@@ -58,6 +58,16 @@ function Appbar() {
     setActiveLink(clickedLinkText);
   };
 
+  const getUserData = () => {
+    const stringfiedUser = localStorage.getItem("user") || "";
+    if (stringfiedUser) {
+      return JSON.parse(stringfiedUser);
+    }
+    return false;
+  }
+
+  const user = getUserData()
+
   useEffect(() => {
     const links = document.querySelectorAll(".home-navlink");
     links.forEach((link) => {
@@ -75,18 +85,21 @@ function Appbar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {!loggedIn && (
-            <Button color="inherit"
-              onClick={handleLogin}
-              style={{
-                position: 'absolute',
-                top: '17px',
-                right: '10px'
-              }}
-            >
-              เข้าสู่ระบบ
-            </Button>
+          {!user && (
+            <Link to="/login">
+              <Button color="inherit"
+                onClick={handleLogin}
+                style={{
+                  position: 'absolute',
+                  top: '17px',
+                  right: '10px'
+                }}
+              >
+                เข้าสู่ระบบ
+              </Button>
+            </Link>
           )}
+
           <Typography
             variant="h6"
             noWrap
@@ -130,7 +143,7 @@ function Appbar() {
             >
             </Button>
           </Box>
-          {loggedIn && (
+          {user && (
             <Box sx={{ flexGrow: 0 }} onClick={handleLogout}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

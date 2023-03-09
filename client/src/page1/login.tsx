@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 import './login.css';
+import { storeUser } from "../helper";
 
 const Login: React.FC = (props) => {
   const [email, setEmail] = useState("");
@@ -24,6 +25,7 @@ const Login: React.FC = (props) => {
     });
     if (response.ok) {
       const data = await response.json();
+      storeUser(data)
       localStorage.setItem("token", data.jwt);
       Swal.fire({
         icon: "success",
