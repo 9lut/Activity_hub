@@ -38,6 +38,9 @@ const DetailAct = () =>  {
   const { id } = useParams();
   const [activity, setActivity] = useState<Activity>();
 
+  const item = activity?.attributes
+  const activityImage = `http://localhost:1337${item?.cover.data.attributes.formats.thumbnail.url}`;
+
   const fetchData = async () => {
     const response = await axios.get(`http://localhost:1337/api/activities/${id}?populate=*`);
     setActivity(response.data.data);
@@ -61,11 +64,10 @@ const DetailAct = () =>  {
     return <div>Loading...</div>;
   }
 
-  console.log(activity);
   return (
     <>
     <header className="header1">
-      <img src={activity.attributes.cover.data.attributes.formats.thumbnail.url}></img>
+      <img src={activityImage}></img>
       <div className="container">
       </div>
     </header>
