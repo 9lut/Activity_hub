@@ -35,6 +35,11 @@ function AdminAppbar() {
     setAnchorElUser(null);
   };
 
+  const handleLogoutClick = () => {
+    console.log('Logging Out');
+    window.location.href = "./logout"
+  }
+
   return (
     <AppBar position="relative">
       <Container maxWidth="xl">
@@ -98,7 +103,7 @@ function AdminAppbar() {
             display="flex"
             justifyContent="flex-end"
             alignItems="flex-end">
-          <Button className='OutButton' variant="contained">ออกจากระบบ</Button>
+          <Button className='OutButton' variant="contained" onClick={handleLogoutClick}>ออกจากระบบ</Button>
           </Box>
         </Toolbar>
       </Container>
