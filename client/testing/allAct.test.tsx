@@ -3,6 +3,7 @@ import AllAct from '../src/page2/allAct';
 import { render, screen, fireEvent } from '@testing-library/react';
 import React from 'react';
 import { describe, expect, it } from 'vitest';
+import '@testing-library/jest-dom/extend-expect';
 
 describe('AllAct', () => {
   it('renders the activity list', async () => { expect

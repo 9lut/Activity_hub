@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
 const settings = ['Admin'];
-const img = require('../image/Activity.png');
+import img from '../image/Activity.png';
 
 function AdminAppbar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
