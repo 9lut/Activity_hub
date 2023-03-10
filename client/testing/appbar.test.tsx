@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import Appbar from '../appbar';
+import Appbar from '../src/components/appbar';
 
 describe('Appbar', () => {
     beforeEach(() => {
