@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import { userData } from '../helper';
+import conf from '../conf';
 
 
 const theme = createTheme();
@@ -24,7 +25,7 @@ export default function RegisterPage() {
     event.preventDefault();
     console.log(user);
     try {
-      const url = "http://localhost:1337/api/auth/local/register"
+      const url = `${conf.apiPrefix}/api/auth/local/register`
       if (user.email && user.password && user.username && (user.password === user.confirmPassword)) {
         const res = await axios.post(url, user)
         console.log(res.data)

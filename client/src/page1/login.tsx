@@ -4,6 +4,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import './login.css';
 import { storeUser } from "../helper";
+import conf from "../conf";
 
 const Login: React.FC = (props) => {
   const [email, setEmail] = useState("");
@@ -13,7 +14,7 @@ const Login: React.FC = (props) => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:1337/api/auth/local", {
+    const response = await fetch(`${conf.apiPrefix}/api/auth/local`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -4,6 +4,7 @@ import Result from '../models/Result';
 import AppBar from '../components/appbar';
 import './from.css';
 import axios from 'axios';
+import conf from '../conf';
 
 
 function Form() {
@@ -16,7 +17,7 @@ function Form() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:1337/api/activityregisters', {
+      const res = await axios.post(`${conf.apiPrefix}api/activityregisters`, {
         firstName,
         lastName,
         email,
