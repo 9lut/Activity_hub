@@ -14,7 +14,7 @@ const style = {
   maxWidth: 700
 };
 
-function Home() {
+function AllAct() {
   const [home, setHome] = useState<Activity[]>([])
   const [selectFilter, setSelectFilter] = useState('');
   const [searchFilter, setSearchFilter] = useState('');
@@ -77,4 +77,4 @@ function Home() {
     </div>
   );
 };
-export default Home;
+export default AllAct;
