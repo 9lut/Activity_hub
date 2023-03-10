@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Button } from "@mui/material";
 import AdminAppbar from "../components/adminbar";
+import conf from "../conf";
 
 interface Fields {
   id: {
@@ -46,7 +47,7 @@ const AddActivity: React.FC = () => {
 
   const handleSubmit = async (): Promise<void> => {
     try {
-      await axios.post("http://localhost:1337/api/activities", Fields);
+      await axios.post(`${conf.apiPrefix}/api/activities`, Fields);
       setFields({
         id: {
           attributes: {
